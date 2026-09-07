@@ -17,10 +17,6 @@ import sys
 
 
 GLOBAL_LABEL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_#]*)(::?)(.*?)(\r?\n)?$")
-QUOTED_DB_RE = re.compile(
-    r'^(\s*db\s+)("(?:[^"\\]|\\.)*")(.*?)(\r?\n)?$'
-)
-
 LOCALIZED_DATA_ROUTES = (
     ("data/{locale}/yes_no_menu_strings.asm", "data/yes_no_menu_strings.asm"),
     ("data/battle/{locale}/stat_names.asm", "data/battle/stat_names.asm"),
@@ -113,37 +109,6 @@ def preserve_target_label(target_line: str, source_line: str) -> str:
         raise ValueError("attempted to combine different labels")
     ending = source.group(4) or ""
     return target.group(1) + target.group(2) + source.group(3) + ending
-
-
-def import_quoted_db_strings(
-    target_block: LabelBlock, source_block: LabelBlock
-) -> list[str]:
-    """Replace strings while retaining the target block's binary schema."""
-    source_strings = [
-        match.group(2)
-        for line in source_block.lines
-        if (match := QUOTED_DB_RE.match(line))
-    ]
-    target_matches = [
-        (index, match)
-        for index, line in enumerate(target_block.lines)
-        if (match := QUOTED_DB_RE.match(line))
-    ]
-    if len(source_strings) != len(target_matches):
-        raise SystemExit(
-            f"quoted db count differs for {target_block.label}: "
-            f"destination {len(target_matches)}, source {len(source_strings)}"
-        )
-
-    output = list(target_block.lines)
-    for source_string, (index, target) in zip(source_strings, target_matches):
-        output[index] = (
-            target.group(1)
-            + source_string
-            + target.group(3)
-            + (target.group(4) or "")
-        )
-    return output
 
 
 def write_report(
@@ -242,17 +207,8 @@ def main() -> None:
                 continue
 
             source_block = candidates[0]
-            if destination_path == (
-                project_root
-                / "data"
-                / "pokemon"
-                / args.locale
-                / "dex_entries.asm"
-            ):
-                replacement = import_quoted_db_strings(block, source_block)
-            else:
-                replacement = list(source_block.lines)
-                replacement[0] = preserve_target_label(block.lines[0], replacement[0])
+            replacement = list(source_block.lines)
+            replacement[0] = preserve_target_label(block.lines[0], replacement[0])
             output.extend(replacement)
             matched += 1
 

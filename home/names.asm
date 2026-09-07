@@ -63,6 +63,10 @@ GetMachineName::
 	ld [wNamedObjectIndex], a
 	ld hl, HiddenPrefix ; points to "HM"
 	ld bc, 2
+	ld a, [wLanguage]
+	cp LANG_GERMAN
+	jr nz, .WriteMachinePrefix
+	ld hl, HiddenPrefixGerman ; points to "VM"
 	jr .WriteMachinePrefix
 .WriteTM
 	ld hl, TechnicalPrefix ; points to "TM"
@@ -104,6 +108,8 @@ TechnicalPrefix::
 	db "TM"
 HiddenPrefix::
 	db "HM"
+HiddenPrefixGerman:
+	db "VM"
 
 ; sets carry if item is HM, clears carry if item is not HM
 ; Input: a = item ID

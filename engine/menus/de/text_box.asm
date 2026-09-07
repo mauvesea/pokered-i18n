@@ -112,7 +112,7 @@ GetTextBoxIDText:
 GetAddressOfScreenCoords:
 	push bc
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH
+	ld bc, 20
 .loop ; loop to add d rows to the base address
 	ld a, d
 	and a
@@ -125,7 +125,7 @@ GetAddressOfScreenCoords:
 	add hl, de
 	ret
 
-INCLUDE "data/text_boxes.asm"
+INCLUDE "data/{LANGUAGE}/text_boxes.asm"
 
 DisplayMoneyBox:
 	ld hl, wStatusFlags5
@@ -144,9 +144,6 @@ DisplayMoneyBox:
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	ret
-
-CurrencyString:
-	db "      ¥@"
 
 DoBuySellQuitMenu:
 	ld a, [wStatusFlags5]
@@ -266,9 +263,9 @@ DisplayTwoOptionMenu:
 	pop hl
 	ld a, [hli]
 	and a ; put blank line before first menu item?
-	ld bc, SCREEN_WIDTH + 2
+	ld bc, 20 + 2
 	jr z, .noBlankLine
-	ld bc, 2 * SCREEN_WIDTH + 2
+	ld bc, 2 * 20 + 2
 .noBlankLine
 	ld a, [hli]
 	ld e, a
@@ -342,7 +339,7 @@ DisplayTwoOptionMenu:
 
 TwoOptionMenu_SaveScreenTiles:
 	ld de, wBuffer
-	lb bc, 5, 6
+	lb bc, 5, 7
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -350,17 +347,17 @@ TwoOptionMenu_SaveScreenTiles:
 	dec c
 	jr nz, .loop
 	push bc
-	ld bc, SCREEN_WIDTH - 6
+	ld bc, SCREEN_WIDTH - 7
 	add hl, bc
 	pop bc
-	ld c, $6
+	ld c, $7
 	dec b
 	jr nz, .loop
 	ret
 
 TwoOptionMenu_RestoreScreenTiles:
 	ld de, wBuffer
-	lb bc, 5, 6
+	lb bc, 5, 7
 .loop
 	ld a, [de]
 	inc de
@@ -368,10 +365,10 @@ TwoOptionMenu_RestoreScreenTiles:
 	dec c
 	jr nz, .loop
 	push bc
-	ld bc, SCREEN_WIDTH - 6
+	ld bc, SCREEN_WIDTH - 7
 	add hl, bc
 	pop bc
-	ld c, 6
+	ld c, 7
 	dec b
 	jr nz, .loop
 	call UpdateSprites
@@ -510,9 +507,9 @@ LocalizedFieldMoveNamesEnd:
 	ds $50 - (LocalizedFieldMoveNamesEnd - LocalizedFieldMoveNamesStart)
 
 PokemonMenuEntries:
-	db   "STATS"
-	next "SWITCH"
-	next "CANCEL@"
+	db   "STATUS"
+	next "TAUSCH"
+	next "ZURÜCK@"
 
 GetMonFieldMoves:
 	ld a, [wWhichPokemon]

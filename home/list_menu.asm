@@ -522,7 +522,14 @@ PrintListMenuEntries::
 	ret
 .printCancelMenuItem
 	ld de, ListMenuCancelText
+	ld a, [wLanguage]
+	cp LANG_GERMAN
+	jr nz, .placeCancelText
+	ld de, ListMenuCancelTextGerman
+.placeCancelText
 	jp PlaceString
 
 ListMenuCancelText::
 	db "CANCEL@"
+ListMenuCancelTextGerman:
+	db "ZURÜCK@"

@@ -27,8 +27,16 @@ INCLUDE "engine/overworld/sprite_collisions.asm"
 INCLUDE "engine/debug/debug_menu.asm"
 INCLUDE "engine/events/pick_up_item.asm"
 INCLUDE "engine/overworld/movement.asm"
-INCLUDE "engine/link/cable_club.asm"
-INCLUDE "engine/menus/main_menu.asm"
+LocalizedCableClubStart:
+INCLUDE "engine/link/{LANGUAGE}/cable_club.asm"
+LocalizedCableClubEnd:
+	assert LocalizedCableClubEnd - LocalizedCableClubStart <= $800
+	ds $800 - (LocalizedCableClubEnd - LocalizedCableClubStart)
+LocalizedMainMenuStart:
+INCLUDE "engine/menus/{LANGUAGE}/main_menu.asm"
+LocalizedMainMenuEnd:
+	assert LocalizedMainMenuEnd - LocalizedMainMenuStart <= $600
+	ds $600 - (LocalizedMainMenuEnd - LocalizedMainMenuStart)
 INCLUDE "engine/movie/oak_speech/oak_speech.asm"
 INCLUDE "engine/overworld/special_warps.asm"
 INCLUDE "engine/debug/debug_party.asm"
@@ -41,9 +49,17 @@ INCLUDE "engine/pokemon/learn_move.asm"
 INCLUDE "engine/events/pokecenter.asm"
 INCLUDE "engine/events/set_blackout_map.asm"
 INCLUDE "engine/menus/display_text_id_init.asm"
-INCLUDE "engine/menus/draw_start_menu.asm"
+LocalizedDrawStartMenuStart:
+INCLUDE "engine/menus/{LANGUAGE}/draw_start_menu.asm"
+LocalizedDrawStartMenuEnd:
+	assert LocalizedDrawStartMenuEnd - LocalizedDrawStartMenuStart <= $c0
+	ds $c0 - (LocalizedDrawStartMenuEnd - LocalizedDrawStartMenuStart)
 INCLUDE "engine/link/cable_club_npc.asm"
-INCLUDE "engine/menus/text_box.asm"
+LocalizedTextBoxStart:
+INCLUDE "engine/menus/{LANGUAGE}/text_box.asm"
+LocalizedTextBoxEnd:
+	assert LocalizedTextBoxEnd - LocalizedTextBoxStart <= $580
+	ds $580 - (LocalizedTextBoxEnd - LocalizedTextBoxStart)
 INCLUDE "engine/battle/move_effects/drain_hp.asm"
 INCLUDE "engine/menus/players_pc.asm"
 INCLUDE "engine/pokemon/remove_mon.asm"
@@ -94,11 +110,19 @@ INCLUDE "gfx/font.asm"
 SECTION "Battle Engine 1", ROMX
 
 INCLUDE "engine/overworld/is_player_just_outside_map.asm"
-INCLUDE "engine/pokemon/status_screen.asm"
+LocalizedStatusScreenStart:
+INCLUDE "engine/pokemon/{LANGUAGE}/status_screen.asm"
+LocalizedStatusScreenEnd:
+	assert LocalizedStatusScreenEnd - LocalizedStatusScreenStart <= $400
+	ds $400 - (LocalizedStatusScreenEnd - LocalizedStatusScreenStart)
 INCLUDE "engine/menus/party_menu.asm"
 INCLUDE "gfx/player.asm"
 INCLUDE "engine/overworld/turn_sprite.asm"
-INCLUDE "engine/menus/start_sub_menus.asm"
+LocalizedStartSubMenusStart:
+INCLUDE "engine/menus/{LANGUAGE}/start_sub_menus.asm"
+LocalizedStartSubMenusEnd:
+	assert LocalizedStartSubMenusEnd - LocalizedStartSubMenusStart <= $700
+	ds $700 - (LocalizedStartSubMenusEnd - LocalizedStartSubMenusStart)
 INCLUDE "engine/items/tms.asm"
 INCLUDE "engine/battle/end_of_battle.asm"
 INCLUDE "engine/battle/wild_encounters.asm"
@@ -150,13 +174,21 @@ INCLUDE "engine/events/hidden_events/oaks_lab_posters.asm"
 INCLUDE "engine/events/hidden_events/safari_game.asm"
 INCLUDE "engine/events/hidden_events/cinnabar_gym_quiz.asm"
 INCLUDE "engine/events/hidden_events/magazines.asm"
-INCLUDE "engine/events/hidden_events/bills_house_pc.asm"
+LocalizedBillsHousePCStart:
+INCLUDE "engine/events/hidden_events/{LANGUAGE}/bills_house_pc.asm"
+LocalizedBillsHousePCEnd:
+	assert LocalizedBillsHousePCEnd - LocalizedBillsHousePCStart <= $150
+	ds $150 - (LocalizedBillsHousePCEnd - LocalizedBillsHousePCStart)
 INCLUDE "engine/events/hidden_events/oaks_lab_email.asm"
 
 
 SECTION "Bill's PC", ROMX
 
-INCLUDE "engine/pokemon/bills_pc.asm"
+LocalizedBillsPCStart:
+INCLUDE "engine/pokemon/{LANGUAGE}/bills_pc.asm"
+LocalizedBillsPCEnd:
+	assert LocalizedBillsPCEnd - LocalizedBillsPCStart <= $4c0
+	ds $4c0 - (LocalizedBillsPCEnd - LocalizedBillsPCStart)
 
 
 SECTION "Battle Engine 3", ROMX
@@ -221,7 +253,11 @@ INCLUDE "engine/battle/effects.asm"
 
 SECTION "bank10", ROMX
 
-INCLUDE "engine/menus/pokedex.asm"
+LocalizedPokedexStart:
+INCLUDE "engine/menus/{LANGUAGE}/pokedex.asm"
+LocalizedPokedexEnd:
+	assert LocalizedPokedexEnd - LocalizedPokedexStart <= $1180
+	ds $1180 - (LocalizedPokedexEnd - LocalizedPokedexStart)
 INCLUDE "engine/movie/trade.asm"
 INCLUDE "engine/movie/intro.asm"
 INCLUDE "engine/movie/trade2.asm"
@@ -348,7 +384,11 @@ INCLUDE "engine/items/itemfinder.asm"
 
 SECTION "Vending Machine", ROMX
 
-INCLUDE "engine/events/vending_machine.asm"
+LocalizedVendingMachineStart:
+INCLUDE "engine/events/{LANGUAGE}/vending_machine.asm"
+LocalizedVendingMachineEnd:
+	assert LocalizedVendingMachineEnd - LocalizedVendingMachineStart <= $130
+	ds $130 - (LocalizedVendingMachineEnd - LocalizedVendingMachineStart)
 
 
 SECTION "Itemfinder 2", ROMX

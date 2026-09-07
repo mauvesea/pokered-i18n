@@ -18,8 +18,8 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o
 
-common_rom_obj := $(filter-out main.o text.o,$(rom_obj))
-vc_rom_obj := $(filter-out text.o,$(rom_obj))
+common_rom_obj := $(filter-out main.o maps.o text.o,$(rom_obj))
+vc_rom_obj := $(rom_obj)
 
 pokered_obj        := $(common_rom_obj:.o=_red.o)
 pokeblue_obj       := $(common_rom_obj:.o=_blue.o)
@@ -30,6 +30,10 @@ pokeblue_vc_obj    := $(vc_rom_obj:.o=_blue_vc.o)
 pokered_main_obj        := $(languages:%=main_red_%.o)
 pokeblue_main_obj       := $(languages:%=main_blue_%.o)
 pokeblue_debug_main_obj := $(languages:%=main_blue_debug_%.o)
+
+pokered_maps_obj        := $(languages:%=maps_red_%.o)
+pokeblue_maps_obj       := $(languages:%=maps_blue_%.o)
+pokeblue_debug_maps_obj := $(languages:%=maps_blue_debug_%.o)
 
 pokered_text_obj        := $(languages:%=text_red_%.o)
 pokeblue_text_obj       := $(languages:%=text_blue_%.o)
@@ -109,6 +113,9 @@ tidy:
 	      $(pokered_main_obj) \
 	      $(pokeblue_main_obj) \
 	      $(pokeblue_debug_main_obj) \
+	      $(pokered_maps_obj) \
+	      $(pokeblue_maps_obj) \
+	      $(pokeblue_debug_maps_obj) \
 	      $(pokered_text_obj) \
 	      $(pokeblue_text_obj) \
 	      $(pokeblue_debug_text_obj) \
@@ -178,6 +185,17 @@ endif
 main_scanned_deps := $(shell tools/scan_includes main.asm)
 main_common_deps := $(foreach dep,$(main_scanned_deps),$(if $(findstring {LANGUAGE},$(dep)),,$(dep)))
 locale_main_deps = \
+	engine/link/$(1)/cable_club.asm \
+	engine/menus/$(1)/main_menu.asm \
+	engine/menus/$(1)/draw_start_menu.asm \
+	engine/menus/$(1)/text_box.asm \
+	engine/pokemon/$(1)/status_screen.asm \
+	engine/menus/$(1)/start_sub_menus.asm \
+	engine/events/hidden_events/$(1)/bills_house_pc.asm \
+	engine/pokemon/$(1)/bills_pc.asm \
+	engine/menus/$(1)/pokedex.asm \
+	engine/events/$(1)/vending_machine.asm \
+	data/$(1)/text_boxes.asm \
 	data/$(1)/yes_no_menu_strings.asm \
 	data/battle/$(1)/stat_names.asm \
 	data/battle/$(1)/stat_mod_names.asm \
@@ -201,6 +219,19 @@ main_blue_%.o: main.asm $(main_common_deps) $$(call locale_main_deps,$$*) $(prei
 main_blue_debug_%.o: main.asm $(main_common_deps) $$(call locale_main_deps,$$*) $(preinclude_deps) | rgbdscheck.o
 	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D _DEBUG -D LANGUAGE=$* -o $@ $<
 
+maps_scanned_deps := $(shell tools/scan_includes maps.asm)
+maps_common_deps := $(foreach dep,$(maps_scanned_deps),$(if $(findstring {LANGUAGE},$(dep)),,$(dep)))
+locale_maps_deps = scripts/$(1)/BikeShop.asm
+
+maps_red_%.o: maps.asm $(maps_common_deps) $$(call locale_maps_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _RED -D LANGUAGE=$* -o $@ $<
+
+maps_blue_%.o: maps.asm $(maps_common_deps) $$(call locale_maps_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D LANGUAGE=$* -o $@ $<
+
+maps_blue_debug_%.o: maps.asm $(maps_common_deps) $$(call locale_maps_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D _DEBUG -D LANGUAGE=$* -o $@ $<
+
 locale_text_deps := $(shell find text data/text -type f -name '*.asm')
 
 text_red_%.o: text.asm $(locale_text_deps) $(preinclude_deps) | rgbdscheck.o
@@ -221,15 +252,23 @@ RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03
 pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
 pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
 
-pokered_%.gbc: $(pokered_obj) main_red_%.o text_red_%.o layout.link
+pokered_vc.gbc: $(pokered_vc_obj) layout.link
+	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) $@
+
+pokeblue_vc.gbc: $(pokeblue_vc_obj) layout.link
+	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) $@
+
+pokered_%.gbc: $(pokered_obj) main_red_%.o maps_red_%.o text_red_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON RED" $@
 
-pokeblue_%.gbc: $(pokeblue_obj) main_blue_%.o text_blue_%.o layout.link
+pokeblue_%.gbc: $(pokeblue_obj) main_blue_%.o maps_blue_%.o text_blue_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON BLUE" $@
 
-pokeblue_debug_%.gbc: $(pokeblue_debug_obj) main_blue_debug_%.o text_blue_debug_%.o layout.link
+pokeblue_debug_%.gbc: $(pokeblue_debug_obj) main_blue_debug_%.o maps_blue_debug_%.o text_blue_debug_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0xff -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0xff -t "POKEMON BLUE" $@
 

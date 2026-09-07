@@ -2,6 +2,11 @@
 LoadPokedexTilePatterns:
 	call LoadHpBarAndStatusTilePatterns
 	ld de, PokedexTileGraphics
+	ld a, [wLanguage]
+	cp LANG_GERMAN
+	jr nz, .gotPokedexGraphics
+	ld de, GermanPokedexTileGraphics
+.gotPokedexGraphics
 	ld hl, vChars2 tile $60
 	lb bc, BANK(PokedexTileGraphics), (PokedexTileGraphicsEnd - PokedexTileGraphics) / TILE_SIZE
 	call CopyVideoData

@@ -24,6 +24,10 @@ TextBoxGraphicsEnd::
 PokedexTileGraphics: INCBIN "gfx/pokedex/pokedex.2bpp"
 PokedexTileGraphicsEnd:
 
+GermanPokedexTileGraphics: INCBIN "gfx/pokedex/de.2bpp"
+GermanPokedexTileGraphicsEnd:
+	assert GermanPokedexTileGraphicsEnd - GermanPokedexTileGraphics == PokedexTileGraphicsEnd - PokedexTileGraphics
+
 WorldMapTileGraphics: INCBIN "gfx/town_map/town_map.2bpp"
 WorldMapTileGraphicsEnd:
 

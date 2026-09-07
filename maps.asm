@@ -1,3 +1,7 @@
+IF !DEF(LANGUAGE)
+	DEF LANGUAGE EQUS "en"
+ENDC
+
 SECTION "Maps 1", ROMX
 
 INCLUDE "data/maps/headers/CeladonCity.asm"
@@ -148,7 +152,11 @@ INCLUDE "scripts/CeruleanTradeHouse.asm"
 INCLUDE "data/maps/objects/CeruleanTradeHouse.asm"
 
 INCLUDE "data/maps/headers/BikeShop.asm"
-INCLUDE "scripts/BikeShop.asm"
+LocalizedBikeShopScriptStart:
+INCLUDE "scripts/{LANGUAGE}/BikeShop.asm"
+LocalizedBikeShopScriptEnd:
+	assert LocalizedBikeShopScriptEnd - LocalizedBikeShopScriptStart <= $140
+	ds $140 - (LocalizedBikeShopScriptEnd - LocalizedBikeShopScriptStart)
 INCLUDE "data/maps/objects/BikeShop.asm"
 BikeShop_Blocks: INCBIN "maps/BikeShop.blk"
 

@@ -178,6 +178,11 @@ PlaceMoveUsersName::
 
 .enemy
 	ld de, EnemyText
+	ld a, [wLanguage]
+	cp LANG_GERMAN
+	jr nz, .placeEnemyText
+	ld de, EnemyTextGerman
+.placeEnemyText
 	call PlaceString
 	ld h, b
 	ld l, c
@@ -199,6 +204,7 @@ RocketCharText::  db "ROCKET@"
 PlacePOKeText::   db "POKé@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
+EnemyTextGerman:  db "Gegn. @"
 PlacePKMNText::   db "<PK><MN>@"
 
 ContText::

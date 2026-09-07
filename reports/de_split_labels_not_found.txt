@@ -1,0 +1,21 @@
+German home/split import: labels not found
+Source: /home/mauvesea/pokered-de
+Matched labels: 282
+Destination labels not found in source: 0
+Source labels without a destination: 0
+
+Destination labels not found in source:
+
+Source labels without a destination:
+
+The following destination-only labels are localization infrastructure and were
+excluded from the not-found counts:
+- ListMenuCancelTextGerman (home/list_menu.asm)
+- HiddenPrefixGerman (home/names.asm)
+- EnemyTextGerman (home/text.asm)
+- LocalizedPokedexEntryPointersStart (engine/menus/de/pokedex.asm)
+- LocalizedPokedexEntryPointersEnd (engine/menus/de/pokedex.asm)
+- LocalizedTwoOptionMenuStringsStart (engine/menus/de/text_box.asm)
+- LocalizedTwoOptionMenuStringsEnd (engine/menus/de/text_box.asm)
+- LocalizedFieldMoveNamesStart (engine/menus/de/text_box.asm)
+- LocalizedFieldMoveNamesEnd (engine/menus/de/text_box.asm)
