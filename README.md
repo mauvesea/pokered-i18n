@@ -1,16 +1,30 @@
-# Pokémon Red and Blue [![Build Status][ci-badge]][ci]
+# Pokémon Red and Blue International
 
-This is a disassembly of Pokémon Red and Blue.
+This project extends the pret Pokémon Red/Blue disassembly with runtime support
+for every official international language: English, German, Spanish, French,
+and Italian.
 
-It builds the following ROMs:
+`make` builds 8 MiB MBC5 versions of Red, Blue, and the Blue debug ROM. On boot,
+the player chooses a language before the intro movie. Each language is assembled
+independently and stored in its own 64-bank page:
 
-- Pokemon Red (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
-- Pokemon Blue (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
-- BLUEMONS.GB (debug build) `sha1: 5b1456177671b79b263c614ea0e7cc9ac542e9c4`
-- dmgapae0.e69.patch `sha1: 0fb5f743696adfe1dbb2e062111f08f9bc5a293a`
-- dmgapee0.e68.patch `sha1: ed4be94dc29c64271942c87f2157bca9ca1019c7`
+- `0`: English (`text/en`, `data/text/en`)
+- `1`: German (`text/de`, `data/text/de`)
+- `2`: Spanish (`text/es`, `data/text/es`)
+- `3`: French (`text/fr`, `data/text/fr`)
+- `4`: Italian (`text/it`, `data/text/it`)
 
-To set up the repository, see [**INSTALL.md**](INSTALL.md).
+The language directories include map dialogue, shared messages, Pokédex entries,
+and move names. The non-English directories initially contain English copies and
+can be translated without changing symbol names. The linker builds one normal
+ROM per directory, and `tools/merge_locales.py` combines them into the final
+MBC5 image.
+
+Accented Unicode characters in source text are decomposed automatically. The
+font's `^`, `~`, `` ` ``, `´`, and `¨` tiles are placed above the following base
+glyph, using the restored Japanese dakuten-style text behavior.
+
+To set up the toolchain, see [**INSTALL.md**](INSTALL.md).
 
 
 ## See also

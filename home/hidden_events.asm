@@ -9,14 +9,14 @@ CheckForHiddenEventOrBookshelfOrCardKeyDoor::
 	jr z, .nothingFound
 ; A button is pressed
 	ld a, BANK(CheckForHiddenEvent)
-	ld [rROMB], a
+	rst BankSwitchRST
 	ldh [hLoadedROMBank], a
 	call CheckForHiddenEvent
 	ldh a, [hDidntFindAnyHiddenEvent]
 	and a
 	jr nz, .hiddenEventNotFound
 	ld a, [wHiddenEventFunctionRomBank]
-	ld [rROMB], a
+	rst BankSwitchRST
 	ldh [hLoadedROMBank], a
 	ld de, .returnAddress
 	push de
@@ -34,6 +34,6 @@ CheckForHiddenEventOrBookshelfOrCardKeyDoor::
 .done
 	ldh [hItemAlreadyFound], a
 	pop af
-	ld [rROMB], a
+	rst BankSwitchRST
 	ldh [hLoadedROMBank], a
 	ret

@@ -1,5 +1,8 @@
 SECTION "bank1", ROMX
 
+INCLUDE "engine/menus/language_select.asm"
+INCLUDE "data/text/home_text_pointers.asm"
+
 INCLUDE "data/sprites/facings.asm"
 INCLUDE "engine/events/black_out.asm"
 INCLUDE "data/pokemon/mew.asm"

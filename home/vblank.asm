@@ -29,7 +29,7 @@ VBlank::
 	call hDMARoutine
 	ld a, BANK(PrepareOAMData)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call PrepareOAMData
 
 	; VBlank-sensitive operations end.
@@ -54,7 +54,7 @@ VBlank::
 
 	ld a, [wAudioROMBank] ; music ROM bank
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	cp BANK(Audio1_UpdateMusic)
 	jr nz, .checkForAudio2
@@ -80,7 +80,7 @@ VBlank::
 
 	ld a, [wVBlankSavedROMBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	pop hl
 	pop de

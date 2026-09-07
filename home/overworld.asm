@@ -763,7 +763,7 @@ HandleBlackOut::
 	res BIT_BATTLE_OVER_OR_BLACKOUT, [hl]
 	ld a, BANK(ResetStatusAndHalveMoneyOnBlackout) ; also BANK(PrepareForSpecialWarp) and BANK(SpecialEnterMap)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call ResetStatusAndHalveMoneyOnBlackout
 	call PrepareForSpecialWarp
 	call PlayDefaultMusicFadeOutCurrent
@@ -794,7 +794,7 @@ HandleFlyWarpOrDungeonWarp::
 	call LeaveMapAnim
 	ld a, BANK(PrepareForSpecialWarp)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call PrepareForSpecialWarp
 	jp SpecialEnterMap
 
@@ -1351,7 +1351,7 @@ LoadCurrentMapView::
 	push af
 	ld a, [wTilesetBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld a, [wCurrentTileBlockMapViewPointer] ; address of upper left corner of current map view
 	ld e, a
 	ld a, [wCurrentTileBlockMapViewPointer + 1]
@@ -1433,7 +1433,7 @@ LoadCurrentMapView::
 	jr nz, .rowLoop2
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 AdvancePlayerSprite::
@@ -2264,7 +2264,7 @@ LoadMapHeader::
 	push af
 	ld a, BANK(MapSongBanks)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld hl, MapSongBanks
 	add hl, bc
 	add hl, bc
@@ -2274,7 +2274,7 @@ LoadMapHeader::
 	ld [wMapMusicROMBank], a ; music 2
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 ; function to copy map connection data from ROM to WRAM
@@ -2347,7 +2347,7 @@ LoadMapData::
 .restoreRomBank
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 ; function to switch to the ROM bank that a map is stored in
@@ -2366,7 +2366,7 @@ SwitchToMapRomBank::
 	call BankswitchBack
 	ldh a, [hMapROMBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	pop bc
 	pop hl
 	ret
@@ -2431,7 +2431,7 @@ LoadDestinationWarpPosition::
 	push af
 	ld a, [wPredefParentBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld a, b
 	add a
 	add a
@@ -2443,5 +2443,5 @@ LoadDestinationWarpPosition::
 	call CopyData
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret

@@ -50,7 +50,7 @@ Init::
 
 	ld a, BANK(WriteDMACodeToHRAM)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call WriteDMACodeToHRAM
 
 	xor a
@@ -85,6 +85,12 @@ Init::
 	ei
 
 	predef LoadSGB
+
+	ld a, HIGH(vBGMap0)
+	ldh [hAutoBGTransferDest + 1], a
+	xor a
+	ldh [hAutoBGTransferDest], a
+	farcall SelectLanguage
 
 	ld a, BANK(SFX_Shooting_Star)
 	ld [wAudioROMBank], a

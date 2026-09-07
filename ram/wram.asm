@@ -1609,7 +1609,9 @@ wEvolutionOccurred:: db
 
 wVBlankSavedROMBank:: db
 
-	ds 1
+; Selected language. This is deliberately outside wMainData so loading a save
+; cannot overwrite the choice made during boot.
+wLanguage:: db
 
 wIsKeyItem:: db
 

@@ -6,11 +6,11 @@ FarCopyData2::
 	push af
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call CopyData
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 FarCopyData3::
@@ -20,7 +20,7 @@ FarCopyData3::
 	push af
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	push hl
 	push de
 	push de
@@ -32,7 +32,7 @@ FarCopyData3::
 	pop hl
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 FarCopyDataDouble::
@@ -43,7 +43,7 @@ FarCopyDataDouble::
 	push af
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -56,7 +56,7 @@ FarCopyDataDouble::
 	jr nz, .loop
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 CopyVideoData::
@@ -74,7 +74,7 @@ CopyVideoData::
 
 	ld a, b
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	ld a, e
 	ldh [hVBlankCopySource], a
@@ -96,7 +96,7 @@ CopyVideoData::
 	call DelayFrame
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	pop af
 	ldh [hAutoBGTransferEnabled], a
 	ret
@@ -123,7 +123,7 @@ CopyVideoDataDouble::
 
 	ld a, b
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	ld a, e
 	ldh [hVBlankCopyDoubleSource], a
@@ -145,7 +145,7 @@ CopyVideoDataDouble::
 	call DelayFrame
 	ldh a, [hROMBankTemp]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	pop af
 	ldh [hAutoBGTransferEnabled], a
 	ret

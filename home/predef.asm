@@ -14,13 +14,13 @@ Predef::
 	push af
 	ld a, BANK(GetPredefPointer)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	call GetPredefPointer
 
 	ld a, [wPredefBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	ld de, .done
 	push de
@@ -29,7 +29,7 @@ Predef::
 
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 GetPredefRegisters::

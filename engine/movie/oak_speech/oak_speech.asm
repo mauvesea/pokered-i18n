@@ -121,7 +121,7 @@ OakSpeech:
 ; This code does nothing, as PlaySound does all necessary Bank switch
 ; It looks like a leftover from an early development stage
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld c, 4
 	call DelayFrames
 	ld de, RedSprite
@@ -150,7 +150,7 @@ OakSpeech:
 	pop af
 ; bug: switching ROM Bank should not happen outside of Home Bank
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld c, 20
 	call DelayFrames
 	hlcoord 6, 5

@@ -11,7 +11,7 @@ UncompressSpriteData::
 	push af
 	ld a, b
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ld a, RAMG_SRAM_ENABLE
 	ld [rRAMG], a
 	xor a
@@ -19,7 +19,7 @@ UncompressSpriteData::
 	call _UncompressSpriteData
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 ; initializes necessary data to load a sprite and runs UncompressSpriteDataLoop

@@ -6,7 +6,8 @@ SECTION "rst0", ROM0[$0000]
 	ds $08 - @, 0 ; unused
 
 SECTION "rst8", ROM0[$0008]
-	rst $38
+BankSwitchRST::
+	jp SetROMBank
 
 	ds $10 - @, 0 ; unused
 

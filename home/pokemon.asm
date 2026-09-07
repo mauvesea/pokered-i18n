@@ -130,7 +130,7 @@ LoadFrontSpriteByMonIndex::
 	push af
 	ld a, BANK(CopyUncompressedPicToHL)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	xor a
 	ldh [hStartTileID], a
 	call CopyUncompressedPicToHL
@@ -138,7 +138,7 @@ LoadFrontSpriteByMonIndex::
 	ld [wSpriteFlipped], a
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 
@@ -377,7 +377,7 @@ GetMonHeader::
 	push af
 	ld a, BANK(BaseStats)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	push bc
 	push de
 	push hl
@@ -432,7 +432,7 @@ GetMonHeader::
 	pop bc
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 ; copy party pokemon's name to wNameBuffer

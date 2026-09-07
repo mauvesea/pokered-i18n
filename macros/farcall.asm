@@ -34,11 +34,11 @@ MACRO homecall
 	push af
 	ld a, BANK(\1)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call \1
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 ENDM
 
 MACRO homecall_sf ; homecall but save flags by popping into bc instead of af
@@ -46,10 +46,10 @@ MACRO homecall_sf ; homecall but save flags by popping into bc instead of af
 	push af
 	ld a, BANK(\1)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call \1
 	pop bc
 	ld a, b
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 ENDM

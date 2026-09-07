@@ -104,6 +104,22 @@ PlaceNextChar::
 	dict '<TARGET>',  PlaceMoveTargetsName
 	dict '<USER>',    PlaceMoveUsersName
 
+; A diacritic byte precedes the character it modifies. Place it in the blank
+; tilemap row above without advancing the destination, matching the Japanese
+; dakuten/handakuten behavior restored for the international font.
+	cp '^'
+	jr c, .NotDiacritic
+	cp '¨' + 1
+	jr nc, .NotDiacritic
+	push hl
+	ld bc, -SCREEN_WIDTH
+	add hl, bc
+	ld [hl], a
+	pop hl
+	jp NextChar
+
+.NotDiacritic
+
 	ld [hli], a
 	call PrintLetterDelay
 
@@ -124,7 +140,7 @@ NullChar::
 	ret
 
 TextIDErrorText:: ; "[hTextID] ERROR."
-	text_far _TextIDErrorText
+	text_far LocalizedTextIDErrorText
 	text_end
 
 MACRO print_name
@@ -198,7 +214,7 @@ ContText::
 	jp PlaceNextChar
 
 ContCharText::
-	text_far _ContCharText
+	text_far LocalizedContCharText
 	text_end
 
 PlaceDexEnd::
@@ -604,7 +620,7 @@ TextCommand_FAR::
 	ld a, [hli]
 
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 
 	push hl
 	ld l, e
@@ -614,7 +630,7 @@ TextCommand_FAR::
 
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	jp NextTextCommand
 
 TextCommandJumpTable::

@@ -5,11 +5,11 @@ FarCopyData::
 	push af
 	ld a, [wBuffer]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call CopyData
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	ret
 
 CopyData::

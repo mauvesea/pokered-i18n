@@ -2,6 +2,7 @@ roms := \
 	pokered.gbc \
 	pokeblue.gbc \
 	pokeblue_debug.gbc
+languages := en de es fr it
 patches := \
 	pokered.patch \
 	pokeblue.patch
@@ -17,11 +18,21 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o
 
-pokered_obj        := $(rom_obj:.o=_red.o)
-pokeblue_obj       := $(rom_obj:.o=_blue.o)
-pokeblue_debug_obj := $(rom_obj:.o=_blue_debug.o)
-pokered_vc_obj     := $(rom_obj:.o=_red_vc.o)
-pokeblue_vc_obj    := $(rom_obj:.o=_blue_vc.o)
+common_rom_obj := $(filter-out text.o,$(rom_obj))
+
+pokered_obj        := $(common_rom_obj:.o=_red.o)
+pokeblue_obj       := $(common_rom_obj:.o=_blue.o)
+pokeblue_debug_obj := $(common_rom_obj:.o=_blue_debug.o)
+pokered_vc_obj     := $(common_rom_obj:.o=_red_vc.o)
+pokeblue_vc_obj    := $(common_rom_obj:.o=_blue_vc.o)
+
+pokered_text_obj        := $(languages:%=text_red_%.o)
+pokeblue_text_obj       := $(languages:%=text_blue_%.o)
+pokeblue_debug_text_obj := $(languages:%=text_blue_debug_%.o)
+
+pokered_locale_roms        := $(languages:%=pokered_%.gbc)
+pokeblue_locale_roms       := $(languages:%=pokeblue_%.gbc)
+pokeblue_debug_locale_roms := $(languages:%=pokeblue_debug_%.gbc)
 
 
 ### Build tools
@@ -90,11 +101,25 @@ tidy:
 	      $(pokered_vc_obj) \
 	      $(pokeblue_vc_obj) \
 	      $(pokeblue_debug_obj) \
+	      $(pokered_text_obj) \
+	      $(pokeblue_text_obj) \
+	      $(pokeblue_debug_text_obj) \
+	      $(pokered_locale_roms) \
+	      $(pokered_locale_roms:.gbc=.sym) \
+	      $(pokered_locale_roms:.gbc=.map) \
+	      $(pokeblue_locale_roms) \
+	      $(pokeblue_locale_roms:.gbc=.sym) \
+	      $(pokeblue_locale_roms:.gbc=.map) \
+	      $(pokeblue_debug_locale_roms) \
+	      $(pokeblue_debug_locale_roms:.gbc=.sym) \
+	      $(pokeblue_debug_locale_roms:.gbc=.map) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
-compare: $(roms) $(patches)
-	@$(SHA1) -c roms.sha1
+compare: $(roms)
+	@for rom in $(roms); do \
+		$(RGBFIX) -v $$rom || exit; \
+	done
 
 tools:
 	$(MAKE) -C tools/
@@ -142,24 +167,49 @@ $(foreach obj, $(pokeblue_vc_obj), $(eval $(call DEP,$(obj),$(obj:_blue_vc.o=.as
 
 endif
 
+locale_text_deps := $(shell find text data/text -type f -name '*.asm')
+
+text_red_%.o: text.asm $(locale_text_deps) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _RED -D LANGUAGE=$* -o $@ $<
+
+text_blue_%.o: text.asm $(locale_text_deps) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D LANGUAGE=$* -o $@ $<
+
+text_blue_debug_%.o: text.asm $(locale_text_deps) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D _DEBUG -D LANGUAGE=$* -o $@ $<
+
 
 RGBLINKFLAGS += -d
-pokered.gbc:        RGBLINKFLAGS += -p 0x00
-pokeblue.gbc:       RGBLINKFLAGS += -p 0x00
-pokeblue_debug.gbc: RGBLINKFLAGS += -p 0xff
 pokered_vc.gbc:     RGBLINKFLAGS += -p 0x00
 pokeblue_vc.gbc:    RGBLINKFLAGS += -p 0x00
 
-RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC3+RAM+BATTERY -r 03
-pokered.gbc:        RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
-pokeblue.gbc:       RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
-pokeblue_debug.gbc: RGBFIXFLAGS += -p 0xff -t "POKEMON BLUE"
+RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03
 pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
 pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
 
-%.gbc: $$(%_obj) layout.link
-	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -m $*.map -n $*.sym -o $@ $(filter %.o,$^)
-	$(RGBFIX) $(RGBFIXFLAGS) $@
+pokered_%.gbc: $(pokered_obj) text_red_%.o layout.link
+	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON RED" $@
+
+pokeblue_%.gbc: $(pokeblue_obj) text_blue_%.o layout.link
+	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON BLUE" $@
+
+pokeblue_debug_%.gbc: $(pokeblue_debug_obj) text_blue_debug_%.o layout.link
+	$(RGBLINK) $(RGBLINKFLAGS) -p 0xff -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0xff -t "POKEMON BLUE" $@
+
+pokered.gbc: $(pokered_locale_roms) tools/merge_locales.py
+	python3 tools/merge_locales.py $@ $(filter %.gbc,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON RED" $@
+
+pokeblue.gbc: $(pokeblue_locale_roms) tools/merge_locales.py
+	python3 tools/merge_locales.py $@ $(filter %.gbc,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON BLUE" $@
+
+pokeblue_debug.gbc: $(pokeblue_debug_locale_roms) tools/merge_locales.py
+	python3 tools/merge_locales.py $@ $(filter %.gbc,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) -p 0xff -t "POKEMON BLUE" $@
 
 
 ### Misc file-specific graphics rules

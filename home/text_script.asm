@@ -125,7 +125,7 @@ CloseTextDisplay::
 	jr nz, .restoreSpriteFacingDirectionLoop
 	ld a, BANK(InitMapSprites)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	call InitMapSprites ; reload sprite tile pattern data (since it was partially overwritten by text tile patterns)
 	ld hl, wFontLoaded
 	res BIT_FONT_LOADED, [hl]
@@ -135,7 +135,7 @@ CloseTextDisplay::
 	call LoadCurrentMapView
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	jp UpdateSprites
 
 DisplayPokemartDialogue::
@@ -151,7 +151,7 @@ DisplayPokemartDialogue::
 	jp AfterDisplayingTextID
 
 PokemartGreetingText::
-	text_far _PokemartGreetingText
+	text_far LocalizedPokemartGreetingText
 	text_end
 
 LoadItemList::
@@ -191,7 +191,7 @@ DisplayPokemonFaintedText::
 	jp AfterDisplayingTextID
 
 PokemonFaintedText::
-	text_far _PokemonFaintedText
+	text_far LocalizedPokemonFaintedText
 	text_end
 
 DisplayPlayerBlackedOutText::
@@ -203,7 +203,7 @@ DisplayPlayerBlackedOutText::
 	jp HoldTextDisplayOpen
 
 PlayerBlackedOutText::
-	text_far _PlayerBlackedOutText
+	text_far LocalizedPlayerBlackedOutText
 	text_end
 
 DisplayRepelWoreOffText::
@@ -212,5 +212,5 @@ DisplayRepelWoreOffText::
 	jp AfterDisplayingTextID
 
 RepelWoreOffText::
-	text_far _RepelWoreOffText
+	text_far LocalizedRepelWoreOffText
 	text_end

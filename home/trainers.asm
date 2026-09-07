@@ -342,7 +342,7 @@ PrintEndBattleText::
 	push af
 	ld a, [wEndBattleTextRomBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	push hl
 	farcall SaveTrainerName
 	ld hl, TrainerEndBattleText
@@ -350,7 +350,7 @@ PrintEndBattleText::
 	pop hl
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	rst BankSwitchRST
 	farcall SetEnemyTrainerToStayAndFaceAnyDirection
 	jp WaitForSoundToFinish
 
@@ -372,7 +372,7 @@ GetSavedEndBattleTextPointer::
 	ret
 
 TrainerEndBattleText::
-	text_far _TrainerNameText
+	text_far LocalizedTrainerNameText
 	text_asm
 	call GetSavedEndBattleTextPointer
 	call TextCommandProcessor

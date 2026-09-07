@@ -169,6 +169,62 @@
 	charmap "u'",        $ca
 	charmap "y'",        $cb
 
+	; Precomposed Unicode characters expand to an accent byte followed by the
+	; base glyph. PlaceString draws the accent in the blank row above the glyph.
+	charmap "Â",         $da, $80
+	charmap "Ê",         $da, $84
+	charmap "Î",         $da, $88
+	charmap "Ô",         $da, $8e
+	charmap "Û",         $da, $94
+	charmap "â",         $da, $a0
+	charmap "ê",         $da, $a4
+	charmap "î",         $da, $a8
+	charmap "ô",         $da, $ae
+	charmap "û",         $da, $b4
+
+	charmap "Ã",         $db, $80
+	charmap "Ñ",         $db, $8d
+	charmap "Õ",         $db, $8e
+	charmap "ã",         $db, $a0
+	charmap "ñ",         $db, $ad
+	charmap "õ",         $db, $ae
+
+	charmap "À",         $dc, $80
+	charmap "È",         $dc, $84
+	charmap "Ì",         $dc, $88
+	charmap "Ò",         $dc, $8e
+	charmap "Ù",         $dc, $94
+	charmap "à",         $dc, $a0
+	charmap "è",         $dc, $a4
+	charmap "ì",         $dc, $a8
+	charmap "ò",         $dc, $ae
+	charmap "ù",         $dc, $b4
+
+	charmap "Á",         $dd, $80
+	charmap "É",         $dd, $84
+	charmap "Í",         $dd, $88
+	charmap "Ó",         $dd, $8e
+	charmap "Ú",         $dd, $94
+	charmap "Ý",         $dd, $98
+	charmap "á",         $dd, $a0
+	charmap "é",         $dd, $a4
+	charmap "í",         $dd, $a8
+	charmap "ó",         $dd, $ae
+	charmap "ú",         $dd, $b4
+	charmap "ý",         $dd, $b8
+
+	charmap "Ä",         $de, $80
+	charmap "Ë",         $de, $84
+	charmap "Ï",         $de, $88
+	charmap "Ö",         $de, $8e
+	charmap "Ü",         $de, $94
+	charmap "ä",         $de, $a0
+	charmap "ë",         $de, $a4
+	charmap "ï",         $de, $a8
+	charmap "ö",         $de, $ae
+	charmap "ü",         $de, $b4
+	charmap "ÿ",         $de, $b8
+
 	charmap "^",         $da
 	charmap "~",         $db
 	charmap "`",         $dc
