@@ -2911,6 +2911,7 @@ DisabledText:
 
 TypeText:
 	db "TYPE@"
+	ds 14 ; keep following home-bank entry points aligned with German
 
 SelectEnemyMove:
 	ld a, [wLinkState]

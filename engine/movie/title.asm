@@ -60,7 +60,7 @@ DisplayTitleScreen:
 	ld a, BANK(PokemonLogoGraphics)
 	call FarCopyData2          ; second chunk
 	ld hl, Version_GFX
-	ld de, vChars2 tile $60 + (10 tiles - (Version_GFXEnd - Version_GFX) * 2) / 2
+	ld de, vChars2 tile $50
 	ld bc, Version_GFXEnd - Version_GFX
 	ld a, BANK(Version_GFX)
 	call FarCopyDataDouble
@@ -397,17 +397,79 @@ INCLUDE "data/pokemon/title_mons.asm"
 
 ; prints version text (red, blue)
 PrintGameVersionOnTitleScreen:
+	ld a, [wLanguage]
+	cp LANG_ENGLISH
+	jr z, .En
+	cp LANG_GERMAN
+	jr z, .De
+	cp LANG_SPANISH
+	jr z, .Sp
+	cp LANG_FRENCH
+	jr z, .Fr
+; It
+	hlcoord 7, 8 ; Verify once It gfx is available
+	ld de, VersionOnTitleScreenTextIT
+	jr .Continue
+.En
 	hlcoord 7, 8
-	ld de, VersionOnTitleScreenText
-	jp PlaceString
+	ld de, VersionOnTitleScreenTextEN
+	jr .Continue
+.De
+	hlcoord 6, 8
+	ld de, VersionOnTitleScreenTextDE
+	jr .Continue
+.Sp
+	hlcoord 7, 8
+	ld de, VersionOnTitleScreenTextSP
+	jr .Continue
+.Fr
+	hlcoord 6, 8
+	ld de, VersionOnTitleScreenTextFR
+.Continue
+
+; Copy raw tile IDs. PlaceString cannot be used here because $50-$5f are
+; interpreted as text control characters, and the version graphics use that
+; range of tile IDs.
+.placeTileLoop
+	ld a, [de]
+	inc de
+	cp -1
+	ret z
+	ld [hli], a
+	jr .placeTileLoop
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
-VersionOnTitleScreenText:
+VersionOnTitleScreenTextIT:
+VersionOnTitleScreenTextEN:
 IF DEF(_RED)
-	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
+	db $50,$51,$7F,$52,$53,$54,$55,$56,-1 ; "Red Version"
 ENDC
 IF DEF(_BLUE)
-	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
+	db $50,$51,$52,$53,$54,$55,$56,$57,-1 ; "Blue Version"
+ENDC
+
+VersionOnTitleScreenTextDE:
+IF DEF(_RED)
+	db $57,$58,$59,$7F,$5a,$5b,$5c,$5d,$5e,-1 ; "ROTE EDITION"
+ENDC
+IF DEF(_BLUE)
+	db $58,$59,$5a,$5b,$5c,$5d,$5e,$5f,$60,-1 ; "Blue Version"
+ENDC
+
+VersionOnTitleScreenTextSP:
+IF DEF(_RED)
+	db $5f,$60,$61,$62,$7F,$63,$64,$65,-1 ; "Edicion Roja"
+ENDC
+IF DEF(_BLUE)
+	db $61,$62,$63,$64,$7f,$65,$66,$67,-1 ; "Blue Version"
+ENDC
+
+VersionOnTitleScreenTextFR:
+IF DEF(_RED)
+	db $66,$67,$68,$69,$6a,$6b,$6c,$6d,$6e,$6f,-1 ; "Version Rouge"
+ENDC
+IF DEF(_BLUE)
+	db $68,$69,$6a,$6b,$6c,$6d,$58,$6e,$5a,$5b,-1 ; "Blue Version"
 ENDC
 
 DebugNewGamePlayerName:

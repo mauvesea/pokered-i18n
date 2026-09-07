@@ -18,6 +18,7 @@ import sys
 
 GLOBAL_LABEL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_#]*)(::?)(.*?)(\r?\n)?$")
 LOCALIZED_DATA_ROUTES = (
+    ("engine/battle/{locale}/core.asm", "engine/battle/core.asm"),
     ("data/{locale}/yes_no_menu_strings.asm", "data/yes_no_menu_strings.asm"),
     ("data/battle/{locale}/stat_names.asm", "data/battle/stat_names.asm"),
     ("data/battle/{locale}/stat_mod_names.asm", "data/battle/stat_mod_names.asm"),

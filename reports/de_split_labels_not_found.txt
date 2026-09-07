@@ -1,12 +1,15 @@
 German home/split import: labels not found
 Source: /home/mauvesea/pokered-de
-Matched labels: 282
+Matched labels: 496
 Destination labels not found in source: 0
 Source labels without a destination: 0
 
 Destination labels not found in source:
 
 Source labels without a destination:
+
+Additional file included in this audit:
+- engine/battle/de/core.asm: 214 matching labels
 
 The following destination-only labels are localization infrastructure and were
 excluded from the not-found counts:

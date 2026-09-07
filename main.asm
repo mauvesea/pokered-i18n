@@ -247,7 +247,11 @@ INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
 
 SECTION "Battle Core", ROMX
 
-INCLUDE "engine/battle/core.asm"
+LocalizedBattleCoreStart:
+INCLUDE "engine/battle/{LANGUAGE}/core.asm"
+LocalizedBattleCoreEnd:
+	assert LocalizedBattleCoreEnd - LocalizedBattleCoreStart <= $3140
+	ds $3140 - (LocalizedBattleCoreEnd - LocalizedBattleCoreStart)
 INCLUDE "engine/battle/effects.asm"
 
 

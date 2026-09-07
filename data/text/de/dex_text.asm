@@ -5,7 +5,7 @@ _RhydonDexEntry::
 
 	page "es in bis zu"
 	next "3600 Grad heißer"
-	next "Lava leben."
+	next "Lava leben"
 	dex
 
 _KangaskhanDexEntry::
@@ -14,17 +14,17 @@ _KangaskhanDexEntry::
 	next "Beutel der Mutter"
 
 	page "erst im Alter von"
-	next "3 Jahren."
+	next "3 Jahren"
 	dex
 
 _NidoranMDexEntry::
 	text "Die großen Ohren"
 	next "bemerken Gefahren"
-	next "frühzeitig."
+	next "frühzeitig"
 
 	page "Die großen Hörner"
 	next "enthalten ein"
-	next "starkes Gift."
+	next "starkes Gift"
 	dex
 
 _ClefairyDexEntry::
@@ -34,17 +34,17 @@ _ClefairyDexEntry::
 
 	page "und zauberhaftes"
 	next "Erscheinungsbild"
-	next "viele Bewunderer."
+	next "viele Bewunderer"
 	dex
 
 _SpearowDexEntry::
 	text "Es ernährt sich"
 	next "von Insekten, die"
-	next "es im Gras findet."
+	next "es im Gras findet"
 
 	page "Ein starker"
 	next "Flügelschlag hält"
-	next "es in der Luft."
+	next "es in der Luft"
 	dex
 
 _VoltorbDexEntry::
@@ -54,7 +54,7 @@ _VoltorbDexEntry::
 
 	page "verwechselt. Es"
 	next "lebt vorwiegend"
-	next "in Kraftwerken."
+	next "in Kraftwerken"
 	dex
 
 _NidokingDexEntry::
@@ -64,7 +64,7 @@ _NidokingDexEntry::
 
 	page "Schwanz, um damit"
 	next "Gegner K.O. zu"
-	next "schlagen."
+	next "schlagen"
 	dex
 
 _SlowbroDexEntry::
@@ -72,9 +72,9 @@ _SlowbroDexEntry::
 	next "#MON hat sich"
 	next "ein MUSCHAS"
 
-	page "festgesaugt."
+	page "festgesaugt"
 	next "LAHMUS fungiert"
-	next "für ihn als Wirt."
+	next "für ihn als Wirt"
 	dex
 
 _IvysaurDexEntry::
@@ -84,7 +84,7 @@ _IvysaurDexEntry::
 
 	page "BISAKNOSP nicht"
 	next "mehr auf zwei"
-	next "Beinen stehen."
+	next "Beinen stehen"
 	dex
 
 _ExeggutorDexEntry::
@@ -94,27 +94,27 @@ _ExeggutorDexEntry::
 
 	page "dieses #MON ab"
 	next "und lebt als OWEI"
-	next "weiter."
+	next "weiter"
 	dex
 
 _LickitungDexEntry::
 	text "Dieses #MON"
 	next "verfügt über eine"
-	next "sehr lange Zunge."
+	next "sehr lange Zunge"
 
 	page "Ihre Berührung"
 	next "führt zu schweren"
-	next "Hautirritationen."
+	next "Hautirritationen"
 	dex
 
 _ExeggcuteDexEntry::
 	text "Diese #MON"
 	next "werden oftmals"
-	next "für Eier gehalten."
+	next "für Eier gehalten"
 
 	page "Bei Gefahr bilden"
 	next "sie Rudel, die"
-	next "attackieren."
+	next "attackieren"
 	dex
 
 _GrimerDexEntry::
@@ -124,7 +124,7 @@ _GrimerDexEntry::
 
 	page "Gebieten und"
 	next "ernährt sich von"
-	next "Industrieabfällen."
+	next "Industrieabfällen"
 	dex
 
 _GengarDexEntry::
@@ -134,7 +134,7 @@ _GengarDexEntry::
 
 	page "Passanten mit"
 	next "furchterregenden"
-	next "Schattenspielen."
+	next "Schattenspielen"
 	dex
 
 _NidoranFDexEntry::
@@ -144,27 +144,27 @@ _NidoranFDexEntry::
 
 	page "starke Gifte. Das"
 	next "Weibchen hat"
-	next "kleinere Hörner."
+	next "kleinere Hörner"
 	dex
 
 _NidoqueenDexEntry::
 	text "Dieses #MON"
 	next "besitzt einen"
-	next "harten Panzer."
+	next "harten Panzer"
 
 	page "Im Kampf nutzt es"
 	next "außerdem seine"
-	next "enorme Größe."
+	next "enorme Größe"
 	dex
 
 _CuboneDexEntry::
 	text "Dieses #MON"
 	next "trägt immer eine"
-	next "Schädelmaske."
+	next "Schädelmaske"
 
 	page "Niemand hat bisher"
 	next "sein wahres"
-	next "Gesicht gesehen."
+	next "Gesicht gesehen"
 	dex
 
 _RhyhornDexEntry::
@@ -173,17 +173,17 @@ _RhyhornDexEntry::
 	next "ist tausendmal"
 
 	page "härter als der"
-	next "eines Menschen."
+	next "eines Menschen"
 	dex
 
 _LaprasDexEntry::
 	text "Dieses #MON"
 	next "wurde von Jägern"
-	next "fast ausgerottet."
+	next "fast ausgerottet"
 
 	page "Es kann Personen"
 	next "über das Wasser"
-	next "transportieren."
+	next "transportieren"
 	dex
 
 _ArcanineDexEntry::
@@ -193,7 +193,7 @@ _ArcanineDexEntry::
 
 	page "Fell. Es ist"
 	next "obendrein schnell"
-	next "und sehr wendig."
+	next "und sehr wendig"
 	dex
 
 _MewDexEntry::
@@ -203,37 +203,37 @@ _MewDexEntry::
 
 	page "#MON. Nur"
 	next "wenige Personen"
-	next "haben es gesehen."
+	next "haben es gesehen"
 	dex
 
 _GyaradosDexEntry::
 	text "Ein gigantisches,"
 	next "sehr kraftvolles"
-	next "#MON."
+	next "#MON"
 
 	page "Es ist fähig,"
 	next "ganze Städte"
-	next "zu zerstören."
+	next "zu zerstören"
 	dex
 
 _ShellderDexEntry::
 	text "Eine harte Schale"
 	next "schützt dieses"
-	next "#MON."
+	next "#MON"
 
 	page "Nur wenn es diese"
 	next "öffnet, wird es"
-	next "verwundbar."
+	next "verwundbar"
 	dex
 
 _TentacoolDexEntry::
 	text "Dieses #MON"
 	next "findet man in"
-	next "flachen Gewässern."
+	next "flachen Gewässern"
 
 	page "Unachtsame Gegner"
 	next "empfängt es mit"
-	next "brennendem Gift."
+	next "brennendem Gift"
 	dex
 
 _GastlyDexEntry::
@@ -243,7 +243,7 @@ _GastlyDexEntry::
 
 	page "Gegner unbemerkt"
 	next "ein und versetzt"
-	next "ihn in Tiefschlaf."
+	next "ihn in Tiefschlaf"
 	dex
 
 _ScytherDexEntry::
@@ -253,7 +253,7 @@ _ScytherDexEntry::
 
 	page "ein Ninja. Man"
 	next "glaubt, mehrere"
-	next "Gegner zu sehen."
+	next "Gegner zu sehen"
 	dex
 
 _StaryuDexEntry::
@@ -263,7 +263,7 @@ _StaryuDexEntry::
 
 	page "einem Kampf"
 	next "mühelos"
-	next "regeneriert."
+	next "regeneriert"
 	dex
 
 _BlastoiseDexEntry::
@@ -273,7 +273,7 @@ _BlastoiseDexEntry::
 
 	page "dem Rücken zwei"
 	next "Hochdruckwasser-"
-	next "werfer trägt."
+	next "werfer trägt"
 	dex
 
 _PinsirDexEntry::
@@ -283,7 +283,7 @@ _PinsirDexEntry::
 
 	page "Kneifzangen"
 	next "Gegner zu"
-	next "zermalmen."
+	next "zermalmen"
 	dex
 
 _TangelaDexEntry::
@@ -293,7 +293,7 @@ _TangelaDexEntry::
 
 	page "Ranken übersät,"
 	next "die beim Laufen"
-	next "mitwippen."
+	next "mitwippen"
 	dex
 
 _GrowlitheDexEntry::
@@ -303,7 +303,7 @@ _GrowlitheDexEntry::
 
 	page "bellend und"
 	next "beißend vor"
-	next "Eindringlingen."
+	next "Eindringlingen"
 	dex
 
 _OnixDexEntry::
@@ -313,7 +313,7 @@ _OnixDexEntry::
 
 	page "Zeit hart wie Dia-"
 	next "manten und färben"
-	next "sich schwarz."
+	next "sich schwarz"
 	dex
 
 _FearowDexEntry::
@@ -323,7 +323,7 @@ _FearowDexEntry::
 
 	page "#MON nahezu"
 	next "pausenlos in der"
-	next "Luft bleiben."
+	next "Luft bleiben"
 	dex
 
 _PidgeyDexEntry::
@@ -333,17 +333,17 @@ _PidgeyDexEntry::
 
 	page "zur Verteidigung"
 	next "mit den Flügeln"
-	next "Sand aufwirbelt."
+	next "Sand aufwirbelt"
 	dex
 
 _SlowpokeDexEntry::
 	text "Ein unglaublich"
-	next "träges #MON."
+	next "träges #MON"
 	next "Wenn es verletzt"
 
 	page "wird, bemerkt es"
 	next "den Schmerz erst"
-	next "Sekunden später."
+	next "Sekunden später"
 	dex
 
 _KadabraDexEntry::
@@ -353,37 +353,37 @@ _KadabraDexEntry::
 
 	page "die bei Gegnern"
 	next "Kopfschmerzen"
-	next "auslösen."
+	next "auslösen"
 	dex
 
 _GravelerDexEntry::
 	text "Dieses #MON"
 	next "bewegt sich nur"
-	next "rollend fort."
+	next "rollend fort"
 
 	page "Kein Hindernis"
 	next "kann es vom Kurs"
-	next "abbringen."
+	next "abbringen"
 	dex
 
 _ChanseyDexEntry::
 	text "Ein schwer zu"
 	next "fangendes,"
-	next "seltenes #MON."
+	next "seltenes #MON"
 
 	page "Es bereitet"
 	next "seinem Fänger"
-	next "sehr viel Freude."
+	next "sehr viel Freude"
 	dex
 
 _MachokeDexEntry::
 	text "Dieses #MON"
-	next "ist superstark."
+	next "ist superstark"
 	next "Es kann sich nur"
 
 	page "mit einem kraft-"
 	next "regulierenden"
-	next "Gürtel bewegen."
+	next "Gürtel bewegen"
 	dex
 
 _MrMimeDexEntry::
@@ -393,7 +393,7 @@ _MrMimeDexEntry::
 
 	page "schlägt es mit"
 	next "seinen großen"
-	next "Händen um sich."
+	next "Händen um sich"
 	dex
 
 _HitmonleeDexEntry::
@@ -401,9 +401,9 @@ _HitmonleeDexEntry::
 	next "#MON in Eile"
 	next "ist, werden seine"
 
-	page "Beine länger."
+	page "Beine länger"
 	next "Es läuft mit"
-	next "weiten Schritten."
+	next "weiten Schritten"
 	dex
 
 _HitmonchanDexEntry::
@@ -413,7 +413,7 @@ _HitmonchanDexEntry::
 
 	page "das Licht. Es ist"
 	next "unmöglich, die"
-	next "Schläge zu sehen."
+	next "Schläge zu sehen"
 	dex
 
 _ArbokDexEntry::
@@ -423,7 +423,7 @@ _ArbokDexEntry::
 
 	page "unterscheidet"
 	next "sich von Region"
-	next "zu Region."
+	next "zu Region"
 	dex
 
 _ParasectDexEntry::
@@ -433,7 +433,7 @@ _ParasectDexEntry::
 
 	page "Parasiten. Es"
 	next "bevorzugt feuchte"
-	next "Umgebungen."
+	next "Umgebungen"
 	dex
 
 _PsyduckDexEntry::
@@ -443,7 +443,7 @@ _PsyduckDexEntry::
 
 	page "Blick ein, bevor"
 	next "es PSYKRÄFTE"
-	next "einsetzt."
+	next "einsetzt"
 	dex
 
 _DrowzeeDexEntry::
@@ -453,17 +453,17 @@ _DrowzeeDexEntry::
 
 	page "deren Träume. Von"
 	next "Alpträumen wird"
-	next "ihm aber übel."
+	next "ihm aber übel"
 	dex
 
 _GolemDexEntry::
 	text "Der Körper dieses"
 	next "#MON ist"
-	next "steinhart."
+	next "steinhart"
 
 	page "Er hält sogar"
 	next "einer Dynamit-"
-	next "Explosion stand."
+	next "Explosion stand"
 	dex
 
 _MagmarDexEntry::
@@ -473,27 +473,27 @@ _MagmarDexEntry::
 
 	page "farbenen Körpers"
 	next "perfekt im Feuer"
-	next "verstecken."
+	next "verstecken"
 	dex
 
 _ElectabuzzDexEntry::
 	text "Dieses #MON"
 	next "lebt in der Nähe"
-	next "von Kraftwerken."
+	next "von Kraftwerken"
 
 	page "In Städten kann"
 	next "es Stromausfälle"
-	next "verursachen."
+	next "verursachen"
 	dex
 
 _MagnetonDexEntry::
 	text "Mehrere"
 	next "MAGNETILOS bilden"
-	next "dieses #MON."
+	next "dieses #MON"
 
 	page "Es erscheint,"
 	next "wenn Sonnen-"
-	next "flecken auflodern."
+	next "flecken auflodern"
 	dex
 
 _KoffingDexEntry::
@@ -503,7 +503,7 @@ _KoffingDexEntry::
 
 	page "neigt dazu, ohne"
 	next "Vorwarnung zu"
-	next "explodieren."
+	next "explodieren"
 	dex
 
 _MankeyDexEntry::
@@ -513,7 +513,7 @@ _MankeyDexEntry::
 
 	page "Gemütszustand"
 	next "binnen Sekunden"
-	next "wechselt."
+	next "wechselt"
 	dex
 
 _SeelDexEntry::
@@ -523,17 +523,17 @@ _SeelDexEntry::
 
 	page "um damit dicke"
 	next "Eisschichten"
-	next "zu durchbrechen."
+	next "zu durchbrechen"
 	dex
 
 _DiglettDexEntry::
 	text "Dieses #MON"
 	next "lebt einen Meter"
-	next "unter der Erde."
+	next "unter der Erde"
 
 	page "Es frißt Wurzeln"
 	next "und kommt selten"
-	next "an die Oberfläche."
+	next "an die Oberfläche"
 	dex
 
 _TaurosDexEntry::
@@ -543,7 +543,7 @@ _TaurosDexEntry::
 
 	page "los und benutzt"
 	next "seine Schweife"
-	next "als Peitschen."
+	next "als Peitschen"
 	dex
 
 _FarfetchdDexEntry::
@@ -553,27 +553,27 @@ _FarfetchdDexEntry::
 
 	page "als Waffe. Es"
 	next "setzt ihn wie ein"
-	next "Schwert ein."
+	next "Schwert ein"
 	dex
 
 _VenonatDexEntry::
 	text "Dieses #MON"
 	next "lebt im Schatten"
-	next "großer Bäume."
+	next "großer Bäume"
 
 	page "Es frißt Insekten"
 	next "und wird von"
-	next "Licht angezogen."
+	next "Licht angezogen"
 	dex
 
 _DragoniteDexEntry::
 	text "Ein sehr seltenes"
-	next "WASSER-#MON."
+	next "WASSER-#MON"
 	next "Man sagt,"
 
 	page "seine Intelligenz"
 	next "entspräche der"
-	next "eines Menschen."
+	next "eines Menschen"
 	dex
 
 _DoduoDexEntry::
@@ -583,7 +583,7 @@ _DoduoDexEntry::
 
 	page "durch ein hohes"
 	next "Tempo beim"
-	next "Laufen aus."
+	next "Laufen aus"
 	dex
 
 _PoliwagDexEntry::
@@ -593,7 +593,7 @@ _PoliwagDexEntry::
 
 	page "kaum geeignet. Es"
 	next "bewegt sich daher"
-	next "schwimmend fort."
+	next "schwimmend fort"
 	dex
 
 _JynxDexEntry::
@@ -603,17 +603,17 @@ _JynxDexEntry::
 
 	page "Zuschauer und"
 	next "läßt sie im Takt"
-	next "dazu tanzen."
+	next "dazu tanzen"
 	dex
 
 _MoltresDexEntry::
 	text "Dieses #MON"
 	next "ist der legendäre"
-	next "Feuervogel."
+	next "Feuervogel"
 
 	page "Sein Flügelschlag"
 	next "entfacht ein"
-	next "helles Feuermeer."
+	next "helles Feuermeer"
 	dex
 
 _ArticunoDexEntry::
@@ -623,7 +623,7 @@ _ArticunoDexEntry::
 
 	page "Gletschern ver-"
 	next "irrten Wanderern"
-	next "den Weg weist."
+	next "den Weg weist"
 	dex
 
 _ZapdosDexEntry::
@@ -633,7 +633,7 @@ _ZapdosDexEntry::
 
 	page "aus den Wolken"
 	next "bricht und Blitze"
-	next "schleudert."
+	next "schleudert"
 	dex
 
 _DittoDexEntry::
@@ -643,7 +643,7 @@ _DittoDexEntry::
 
 	page "und sich sofort"
 	next "in deren Ebenbild"
-	next "verwandeln."
+	next "verwandeln"
 	dex
 
 _MeowthDexEntry::
@@ -653,7 +653,7 @@ _MeowthDexEntry::
 
 	page "nachts auf den"
 	next "Straßen nach ver-"
-	next "lorenen Münzen."
+	next "lorenen Münzen"
 	dex
 
 _KrabbyDexEntry::
@@ -663,7 +663,7 @@ _KrabbyDexEntry::
 
 	page "Waffen ein. Es"
 	next "hält damit beim "
-	next "Gehen die Balance."
+	next "Gehen die Balance"
 	dex
 
 _VulpixDexEntry::
@@ -673,17 +673,17 @@ _VulpixDexEntry::
 
 	page "Schweif, der sich"
 	next "mit zunehmendem"
-	next "Alter aufspaltet."
+	next "Alter aufspaltet"
 	dex
 
 _NinetalesDexEntry::
 	text "Dieses #MON"
 	next "ist intelligent,"
-	next "aber rachsüchtig."
+	next "aber rachsüchtig"
 
 	page "Sein Schweif kann"
 	next "einen schweren"
-	next "Fluch übertragen."
+	next "Fluch übertragen"
 	dex
 
 _PikachuDexEntry::
@@ -693,7 +693,7 @@ _PikachuDexEntry::
 
 	page "kann ihre Energie"
 	next "Blitzgewitter"
-	next "erzeugen."
+	next "erzeugen"
 	dex
 
 _RaichuDexEntry::
@@ -703,7 +703,7 @@ _RaichuDexEntry::
 
 	page "zum Schutz vor"
 	next "der körpereigenen"
-	next "Hochspannung."
+	next "Hochspannung"
 	dex
 
 _DratiniDexEntry::
@@ -713,7 +713,7 @@ _DratiniDexEntry::
 
 	page "man eine Kolonie"
 	next "unter Wasser"
-	next "gefunden hat."
+	next "gefunden hat"
 	dex
 
 _DragonairDexEntry::
@@ -723,7 +723,7 @@ _DragonairDexEntry::
 
 	page "Ausstrahlung. Es"
 	next "kann das Klima"
-	next "beeinflussen."
+	next "beeinflussen"
 	dex
 
 _KabutoDexEntry::
@@ -733,17 +733,17 @@ _KabutoDexEntry::
 
 	page "#MON, welches"
 	next "vor Äonen auf dem"
-	next "Meeresgrund lebte."
+	next "Meeresgrund lebte"
 	dex
 
 _KabutopsDexEntry::
 	text "Dieses #MON"
 	next "ist ein sehr"
-	next "guter Schwimmer."
+	next "guter Schwimmer"
 
 	page "Mit seinen großen"
 	next "Klauen attackiert"
-	next "es Beutetiere."
+	next "es Beutetiere"
 	dex
 
 _HorseaDexEntry::
@@ -753,7 +753,7 @@ _HorseaDexEntry::
 
 	page "Wasseroberfläche"
 	next "fliegende"
-	next "Insekten."
+	next "Insekten"
 	dex
 
 _SeadraDexEntry::
@@ -763,7 +763,7 @@ _SeadraDexEntry::
 
 	page "es Flügel und"
 	next "Schwanz als"
-	next "Flossen einsetzt."
+	next "Flossen einsetzt"
 	dex
 
 _SandshrewDexEntry::
@@ -773,27 +773,27 @@ _SandshrewDexEntry::
 
 	page "der Erde. Es jagt"
 	next "jedoch an der"
-	next "Erdoberfläche."
+	next "Erdoberfläche"
 	dex
 
 _SandslashDexEntry::
 	text "Bei Gefahr igelt"
 	next "sich dieses"
-	next "#MON ein."
+	next "#MON ein"
 
 	page "Zusammengerollt"
 	next "kann es angreifen"
-	next "oder fliehen."
+	next "oder fliehen"
 	dex
 
 _OmanyteDexEntry::
 	text "Dieses #MON"
-	next "ist ausgestorben."
+	next "ist ausgestorben"
 	next "In seltenen"
 
 	page "Fällen kann man"
 	next "es aus Fossilien"
-	next "wiederbeleben."
+	next "wiederbeleben"
 	dex
 
 _OmastarDexEntry::
@@ -803,7 +803,7 @@ _OmastarDexEntry::
 
 	page "schwere Panzer"
 	next "behinderte es"
-	next "bei der Jagd."
+	next "bei der Jagd"
 	dex
 
 _JigglypuffDexEntry::
@@ -813,7 +813,7 @@ _JigglypuffDexEntry::
 
 	page "#MON ein Lied,"
 	next "das seine Gegner"
-	next "einschläfert."
+	next "einschläfert"
 	dex
 
 _WigglytuffDexEntry::
@@ -823,27 +823,27 @@ _WigglytuffDexEntry::
 
 	page "Gefahr bläht es"
 	next "sich zu enormer"
-	next "Körpergröße auf."
+	next "Körpergröße auf"
 	dex
 
 _EeveeDexEntry::
 	text "Der Gen-Code"
 	next "von EVOLI ist"
-	next "uneinheitlich."
+	next "uneinheitlich"
 
 	page "Die Strahlung von"
 	next "Element-Steinen"
-	next "läßt es mutieren."
+	next "läßt es mutieren"
 	dex
 
 _FlareonDexEntry::
 	text "Dieses #MON"
 	next "speichert Energie"
-	next "in seinem Körper."
+	next "in seinem Körper"
 
 	page "Seine Temperatur"
 	next "steigt so auf bis"
-	next "zu 1600 Grad."
+	next "zu 1600 Grad"
 	dex
 
 _JolteonDexEntry::
@@ -853,7 +853,7 @@ _JolteonDexEntry::
 
 	page "die es in Blitze"
 	next "von 10000 Volt"
-	next "Stärke umwandelt."
+	next "Stärke umwandelt"
 	dex
 
 _VaporeonDexEntry::
@@ -863,47 +863,47 @@ _VaporeonDexEntry::
 
 	page "Schwanzflosse"
 	next "ähnelt der einer"
-	next "Meerjungfrau."
+	next "Meerjungfrau"
 	dex
 
 _MachopDexEntry::
 	text "Dieses #MON"
 	next "stählt sorgsam"
-	next "seine Muskeln."
+	next "seine Muskeln"
 
 	page "Es trainiert"
 	next "sehr viele"
-	next "Kampfsportarten."
+	next "Kampfsportarten"
 	dex
 
 _ZubatDexEntry::
 	text "Dieses #MON"
 	next "lebt in Kolonien"
-	next "an dunklen Orten."
+	next "an dunklen Orten"
 
 	page "Es identifiziert"
 	next "und ortet Ziele"
-	next "mit Ultraschall."
+	next "mit Ultraschall"
 	dex
 
 _EkansDexEntry::
 	text "Dieses #MON"
 	next "kann sich lautlos"
-	next "bewegen."
+	next "bewegen"
 
 	page "Seine Nahrung"
 	next "sind die Eier von"
-	next "VOGEL-#MON."
+	next "VOGEL-#MON"
 	dex
 
 _ParasDexEntry::
 	text "Dieses #MON"
 	next "ernährt sich von"
-	next "Baumwurzeln."
+	next "Baumwurzeln"
 
 	page "Die Pilze auf dem"
 	next "Rücken nutzen es"
-	next "als Wirtstier."
+	next "als Wirtstier"
 	dex
 
 _PoliwhirlDexEntry::
@@ -913,17 +913,17 @@ _PoliwhirlDexEntry::
 
 	page "leben. An Land"
 	next "schwitzt es sich"
-	next "den Körper naß."
+	next "den Körper naß"
 	dex
 
 _PoliwrathDexEntry::
 	text "Dieses #MON"
 	next "ist ein meister-"
-	next "hafter Schwimmer."
+	next "hafter Schwimmer"
 
 	page "Seine Techniken"
 	next "schlagen selbst"
-	next "Olympiasieger."
+	next "Olympiasieger"
 	dex
 
 _WeedleDexEntry::
@@ -931,59 +931,59 @@ _WeedleDexEntry::
 	next "lebt in Wäldern"
 	next "und ernährt sich"
 
-	page "von Blättern."
+	page "von Blättern"
 	next "Es trägt einen"
-	next "giftigen Stachel."
+	next "giftigen Stachel"
 	dex
 
 _KakunaDexEntry::
 	text "Dieses #MON"
 	next "kann sich kaum"
-	next "bewegen."
+	next "bewegen"
 
 	page "Bei drohender"
 	next "Gefahr verhärtet"
-	next "es seinen Panzer."
+	next "es seinen Panzer"
 	dex
 
 _BeedrillDexEntry::
 	text "Dieses #MON"
-	next "ist sehr schnell."
+	next "ist sehr schnell"
 	next "Es verfügt an den"
 
 	page "Vorderbeinen und"
 	next "am Schwanz über"
-	next "Giftstacheln."
+	next "Giftstacheln"
 	dex
 
 _DodrioDexEntry::
 	text "Dieses #MON"
 	next "verfügt über drei"
-	next "separate Gehirne."
+	next "separate Gehirne"
 
 	page "Zwei Köpfe können"
 	next "schlafen, während"
-	next "der Dritte wacht."
+	next "der Dritte wacht"
 	dex
 
 _PrimeapeDexEntry::
 	text "Dieses #MON"
 	next "ist sehr wild"
-	next "und ausdauernd."
+	next "und ausdauernd"
 
 	page "Es verfolgt seine"
 	next "Beute, bis es sie"
-	next "gefangen hat."
+	next "gefangen hat"
 	dex
 
 _DugtrioDexEntry::
 	text "Drei DIGDA bilden"
-	next "dieses #MON."
+	next "dieses #MON"
 	next "Es gräbt sich bis"
 
 	page "zu 40 km tief in"
 	next "die Erde, um Erd-"
-	next "beben auszulösen."
+	next "beben auszulösen"
 	dex
 
 _VenomothDexEntry::
@@ -993,7 +993,7 @@ _VenomothDexEntry::
 
 	page "dient als Warnung"
 	next "vor den Giften,"
-	next "die es verwendet."
+	next "die es verwendet"
 	dex
 
 _DewgongDexEntry::
@@ -1003,17 +1003,17 @@ _DewgongDexEntry::
 
 	page "eiskaltem Wasser"
 	next "schwimmt es acht"
-	next "Knoten schnell."
+	next "Knoten schnell"
 	dex
 
 _CaterpieDexEntry::
 	text "Dieses #MON"
 	next "trägt Saugnäpfe"
-	next "an den Beinchen."
+	next "an den Beinchen"
 
 	page "Es kann mühelos"
 	next "Steigungen und"
-	next "Mauern erklimmen."
+	next "Mauern erklimmen"
 	dex
 
 _MetapodDexEntry::
@@ -1023,7 +1023,7 @@ _MetapodDexEntry::
 
 	page "bietet er keinen"
 	next "großen Schutz"
-	next "vor Attacken."
+	next "vor Attacken"
 	dex
 
 _ButterfreeDexEntry::
@@ -1033,7 +1033,7 @@ _ButterfreeDexEntry::
 
 	page "den Flügeln, um"
 	next "giftigen Staub"
-	next "freizusetzen."
+	next "freizusetzen"
 	dex
 
 _MachampDexEntry::
@@ -1043,17 +1043,17 @@ _MachampDexEntry::
 
 	page "Gegner bis zum"
 	next "Horizont"
-	next "schleudern."
+	next "schleudern"
 	dex
 
 _GolduckDexEntry::
 	text "Man findet dieses"
 	next "#MON meist in"
-	next "Küstengewässern."
+	next "Küstengewässern"
 
 	page "Viele verwechseln"
 	next "es mit Kappa,"
-	next "einem Monster."
+	next "einem Monster"
 	dex
 
 _HypnoDexEntry::
@@ -1063,7 +1063,7 @@ _HypnoDexEntry::
 
 	page "greift es mit"
 	next "einem Mix von"
-	next "PSYKRÄFTEN an."
+	next "PSYKRÄFTEN an"
 	dex
 
 _GolbatDexEntry::
@@ -1073,7 +1073,7 @@ _GolbatDexEntry::
 
 	page "Energie ab, wenn"
 	next "es zu schwer zum"
-	next "Fliegen wird."
+	next "Fliegen wird"
 	dex
 
 _MewtwoDexEntry::
@@ -1082,7 +1082,7 @@ _MewtwoDexEntry::
 	next "eines jahrelangen"
 
 	page "und skrupellosen"
-	next "Experimentes."
+	next "Experimentes"
 	dex
 
 _SnorlaxDexEntry::
@@ -1092,7 +1092,7 @@ _SnorlaxDexEntry::
 
 	page "frißt. Je größer"
 	next "es wird, desto"
-	next "mehr schläft es."
+	next "mehr schläft es"
 	dex
 
 _MagikarpDexEntry::
@@ -1102,7 +1102,7 @@ _MagikarpDexEntry::
 
 	page "sehr viel stärker"
 	next "als ihre heutigen"
-	next "Nachkommen."
+	next "Nachkommen"
 	dex
 
 _MukDexEntry::
@@ -1112,7 +1112,7 @@ _MukDexEntry::
 
 	page "daß selbst seine"
 	next "Fußspuren Gift"
-	next "enthalten."
+	next "enthalten"
 	dex
 
 _KinglerDexEntry::
@@ -1122,27 +1122,27 @@ _KinglerDexEntry::
 
 	page "könnte es damit"
 	next "10000 KP Schaden"
-	next "zufügen."
+	next "zufügen"
 	dex
 
 _CloysterDexEntry::
 	text "Niemand weiß, wie"
 	next "AUSTOS ohne"
-	next "Schale aussieht."
+	next "Schale aussieht"
 
 	page "Zur Verteidigung"
 	next "attackiert es"
-	next "mit den Hörnern."
+	next "mit den Hörnern"
 	dex
 
 _ElectrodeDexEntry::
 	text "Dieses #MON"
 	next "speichert große"
-	next "Mengen Strom."
+	next "Mengen Strom"
 
 	page "Es explodiert"
 	next "oftmals ohne"
-	next "äußeren Einfluß."
+	next "äußeren Einfluß"
 	dex
 
 _ClefableDexEntry::
@@ -1152,7 +1152,7 @@ _ClefableDexEntry::
 
 	page "Flucht ergreift,"
 	next "wenn es Menschen"
-	next "wittert."
+	next "wittert"
 	dex
 
 _WeezingDexEntry::
@@ -1162,7 +1162,7 @@ _WeezingDexEntry::
 
 	page "Jahre, wenn sich"
 	next "zwei SMOGON"
-	next "vermischen."
+	next "vermischen"
 	dex
 
 _PersianDexEntry::
@@ -1172,7 +1172,7 @@ _PersianDexEntry::
 
 	page "jedoch ein schwer"
 	next "erziehbares"
-	next "Haustier."
+	next "Haustier"
 	dex
 
 _MarowakDexEntry::
@@ -1180,9 +1180,9 @@ _MarowakDexEntry::
 	next "dieses #MON"
 	next "hält, ist seine"
 
-	page "Primärwaffe."
+	page "Primärwaffe"
 	next "Es wirft ihn wie"
-	next "einen Bumerang."
+	next "einen Bumerang"
 	dex
 
 _HaunterDexEntry::
@@ -1192,7 +1192,7 @@ _HaunterDexEntry::
 
 	page "Dimension, da es"
 	next "durch Wände"
-	next "gehen kann."
+	next "gehen kann"
 	dex
 
 _AbraDexEntry::
@@ -1202,7 +1202,7 @@ _AbraDexEntry::
 
 	page "Gefahr, so tele-"
 	next "portiert es sich"
-	next "in Sicherheit."
+	next "in Sicherheit"
 	dex
 
 _AlakazamDexEntry::
@@ -1210,9 +1210,9 @@ _AlakazamDexEntry::
 	next "#MON ist"
 	next "leistungsfähiger"
 
-	page "als ein Computer."
+	page "als ein Computer"
 	next "Sein IQ soll bei"
-	next "etwa 5000 liegen."
+	next "etwa 5000 liegen"
 	dex
 
 _PidgeottoDexEntry::
@@ -1222,7 +1222,7 @@ _PidgeottoDexEntry::
 
 	page "Areal sorgsam"
 	next "gegen alle"
-	next "Eindringlinge."
+	next "Eindringlinge"
 	dex
 
 _PidgeotDexEntry::
@@ -1232,7 +1232,7 @@ _PidgeotDexEntry::
 
 	page "unter Wasser, um"
 	next "seine ahnungslose"
-	next "Beute zu fangen."
+	next "Beute zu fangen"
 	dex
 
 _StarmieDexEntry::
@@ -1240,9 +1240,9 @@ _StarmieDexEntry::
 	next "#MON leuchtet"
 	next "in den Farben"
 
-	page "des Regenbogens."
+	page "des Regenbogens"
 	next "Sein Kern gilt"
-	next "als Edelstein."
+	next "als Edelstein"
 	dex
 
 _BulbasaurDexEntry::
@@ -1252,17 +1252,17 @@ _BulbasaurDexEntry::
 
 	page "auf dem Rücken,"
 	next "der mit ihm"
-	next "keimt und wächst."
+	next "keimt und wächst"
 	dex
 
 _VenusaurDexEntry::
 	text "Dieses #MON"
-	next "folgt der Sonne."
+	next "folgt der Sonne"
 	next "Die Pflanze auf"
 
 	page "seinem Rücken"
 	next "absorbiert"
-	next "Solarenergie."
+	next "Solarenergie"
 	dex
 
 _TentacruelDexEntry::
@@ -1272,7 +1272,7 @@ _TentacruelDexEntry::
 
 	page "ausfahren, um die"
 	next "Beute leichter"
-	next "zu fangen."
+	next "zu fangen"
 	dex
 
 _GoldeenDexEntry::
@@ -1282,7 +1282,7 @@ _GoldeenDexEntry::
 
 	page "wie ein Ballkleid"
 	next "ist, nennt man es"
-	next "die Wasserkönigin."
+	next "die Wasserkönigin"
 	dex
 
 _SeakingDexEntry::
@@ -1292,7 +1292,7 @@ _SeakingDexEntry::
 
 	page "#MON kraftvoll"
 	next "Bäche und Flüsse"
-	next "hinaufschwimmen."
+	next "hinaufschwimmen"
 	dex
 
 _PonytaDexEntry::
@@ -1300,9 +1300,9 @@ _PonytaDexEntry::
 	next "#MON sind"
 	next "zehnmal härter"
 
-	page "als Diamanten."
+	page "als Diamanten"
 	next "Sie trampeln"
-	next "alles nieder."
+	next "alles nieder"
 	dex
 
 _RapidashDexEntry::
@@ -1312,7 +1312,7 @@ _RapidashDexEntry::
 
 	page "Hoffnung, ein"
 	next "Wettrennen gegen"
-	next "sie zu gewinnen."
+	next "sie zu gewinnen"
 	dex
 
 _RattataDexEntry::
@@ -1322,7 +1322,7 @@ _RattataDexEntry::
 
 	page "welches in vielen"
 	next "Gegenden heimisch"
-	next "ist."
+	next "ist"
 	dex
 
 _RaticateDexEntry::
@@ -1332,17 +1332,17 @@ _RaticateDexEntry::
 
 	page "haaren. Fehlen"
 	next "diese, bewegt es"
-	next "sich langsamer."
+	next "sich langsamer"
 	dex
 
 _NidorinoDexEntry::
 	text "Ein aggressives"
 	next "#MON, das sehr"
-	next "flink angreift."
+	next "flink angreift"
 
 	page "Das Horn auf dem"
 	next "Kopf sondert"
-	next "starkes Gift ab."
+	next "starkes Gift ab"
 	dex
 
 _NidorinaDexEntry::
@@ -1352,7 +1352,7 @@ _NidorinaDexEntry::
 
 	page "Einsatz seines"
 	next "relativ kleinen"
-	next "Gifthorns vor."
+	next "Gifthorns vor"
 	dex
 
 _GeodudeDexEntry::
@@ -1362,17 +1362,17 @@ _GeodudeDexEntry::
 
 	page "dieses #MON,"
 	next "da es wie ein"
-	next "Stein aussieht."
+	next "Stein aussieht"
 	dex
 
 _PorygonDexEntry::
 	text "PORYGON besteht"
 	next "komplett aus"
-	next "Computerdaten."
+	next "Computerdaten"
 
 	page "Es kann sich frei"
 	next "in virtuellen"
-	next "Welten bewegen."
+	next "Welten bewegen"
 	dex
 
 _AerodactylDexEntry::
@@ -1382,7 +1382,7 @@ _AerodactylDexEntry::
 
 	page "gezackten Klauen"
 	next "auf seine Beute"
-	next "herabstürzt."
+	next "herabstürzt"
 	dex
 
 _MagnemiteDexEntry::
@@ -1392,17 +1392,17 @@ _MagnemiteDexEntry::
 
 	page "zu schweben. Es"
 	next "taucht meist"
-	next "überraschend auf."
+	next "überraschend auf"
 	dex
 
 _CharmanderDexEntry::
 	text "Dieses #MON"
 	next "bevorzugt heiße"
-	next "Lebensräume."
+	next "Lebensräume"
 
 	page "Bei Regen dampft"
 	next "die Schwanzspitze"
-	next "von GLUMANDA."
+	next "von GLUMANDA"
 	dex
 
 _SquirtleDexEntry::
@@ -1410,9 +1410,9 @@ _SquirtleDexEntry::
 	next "bildet sich auf"
 	next "SCHIGGYS Rücken"
 
-	page "ein Panzer."
+	page "ein Panzer"
 	next "Es attackiert"
-	next "mit Sprühschaum."
+	next "mit Sprühschaum"
 	dex
 
 _CharmeleonDexEntry::
@@ -1421,17 +1421,17 @@ _CharmeleonDexEntry::
 	next "schwingt, steigt"
 
 	page "die Temperatur"
-	next "ins Unermeßliche."
+	next "ins Unermeßliche"
 	dex
 
 _WartortleDexEntry::
 	text "Dieses #MON"
 	next "lauert im Wasser"
-	next "auf Beute."
+	next "auf Beute"
 
 	page "Die Ohren dienen"
 	next "beim Schwimmen"
-	next "zur Orientierung."
+	next "zur Orientierung"
 	dex
 
 _CharizardDexEntry::
@@ -1441,27 +1441,27 @@ _CharizardDexEntry::
 
 	page "schmelzen. Es"
 	next "verursacht ab und"
-	next "zu Waldbrände."
+	next "zu Waldbrände"
 	dex
 
 _OddishDexEntry::
 	text "Dieses #MON"
 	next "verbringt den Tag"
-	next "unter der Erde."
+	next "unter der Erde"
 
 	page "Nachts wandert es"
 	next "umher und sät"
-	next "Samen aus."
+	next "Samen aus"
 	dex
 
 _GloomDexEntry::
 	text "Dieses #MON"
-	next "sabbert nicht."
+	next "sabbert nicht"
 	next "Es sondert einen"
 
 	page "speziellen Nektar"
 	next "ab, um seine"
-	next "Beute anzulocken."
+	next "Beute anzulocken"
 	dex
 
 _VileplumeDexEntry::
@@ -1471,17 +1471,17 @@ _VileplumeDexEntry::
 
 	page "giftige Pollen"
 	next "sind in der Blüte"
-	next "enthalten."
+	next "enthalten"
 	dex
 
 _BellsproutDexEntry::
 	text "Dieses #MON"
 	next "ernährt sich von"
-	next "kleinen Insekten."
+	next "kleinen Insekten"
 
 	page "Mit den Wurzeln"
 	next "zieht es Wasser"
-	next "aus dem Boden."
+	next "aus dem Boden"
 	dex
 
 _WeepinbellDexEntry::
@@ -1491,7 +1491,7 @@ _WeepinbellDexEntry::
 
 	page "bevor es ihn mit"
 	next "einem Säureregen"
-	next "erledigt."
+	next "erledigt"
 	dex
 
 _VictreebelDexEntry::
@@ -1501,5 +1501,5 @@ _VictreebelDexEntry::
 
 	page "Dschungel leben,"
 	next "doch niemand kann"
-	next "dies bestätigen."
+	next "dies bestätigen"
 	dex

@@ -1,6 +1,6 @@
 Locale import (de): labels not found
 Source: /home/mauvesea/pokered-de
-Matched labels: 2813
+Matched labels: 3027
 Destination labels not found in source: 2
 Source labels without a destination: 3
 

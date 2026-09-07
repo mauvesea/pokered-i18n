@@ -185,6 +185,7 @@ endif
 main_scanned_deps := $(shell tools/scan_includes main.asm)
 main_common_deps := $(foreach dep,$(main_scanned_deps),$(if $(findstring {LANGUAGE},$(dep)),,$(dep)))
 locale_main_deps = \
+	engine/battle/$(1)/core.asm \
 	engine/link/$(1)/cable_club.asm \
 	engine/menus/$(1)/main_menu.asm \
 	engine/menus/$(1)/draw_start_menu.asm \
