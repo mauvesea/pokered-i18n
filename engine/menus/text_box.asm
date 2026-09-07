@@ -377,7 +377,7 @@ TwoOptionMenu_RestoreScreenTiles:
 	call UpdateSprites
 	ret
 
-INCLUDE "data/yes_no_menu_strings.asm"
+INCLUDE "data/{LANGUAGE}/yes_no_menu_strings.asm"
 
 DisplayFieldMoveMonMenu:
 	xor a
@@ -499,7 +499,7 @@ DisplayFieldMoveMonMenu:
 	ld de, PokemonMenuEntries
 	jp PlaceString
 
-INCLUDE "data/moves/field_move_names.asm"
+INCLUDE "data/moves/{LANGUAGE}/field_move_names.asm"
 
 PokemonMenuEntries:
 	db   "STATS"

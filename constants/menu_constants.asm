@@ -32,7 +32,7 @@ DEF PC_ITEM_CAPACITY  EQU 50
 	const SAFARI_BATTLE_MENU_TEMPLATE       ; $1b
 
 ; two option menu constants
-; TwoOptionMenuStrings indexes (see data/yes_no_menu_strings.asm)
+; TwoOptionMenuStrings indexes (see data/<language>/yes_no_menu_strings.asm)
 	const_def
 	const YES_NO_MENU       ; 0
 	const NORTH_WEST_MENU   ; 1

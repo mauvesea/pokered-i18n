@@ -1425,7 +1425,7 @@ VitaminNoEffectText:
 	text_far _VitaminNoEffectText
 	text_end
 
-INCLUDE "data/battle/stat_names.asm"
+INCLUDE "data/battle/{LANGUAGE}/stat_names.asm"
 
 ; for BOULDERBADGE when used from the
 ; ITEM window, which corresponds to

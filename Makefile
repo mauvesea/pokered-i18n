@@ -18,13 +18,18 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o
 
-common_rom_obj := $(filter-out text.o,$(rom_obj))
+common_rom_obj := $(filter-out main.o text.o,$(rom_obj))
+vc_rom_obj := $(filter-out text.o,$(rom_obj))
 
 pokered_obj        := $(common_rom_obj:.o=_red.o)
 pokeblue_obj       := $(common_rom_obj:.o=_blue.o)
 pokeblue_debug_obj := $(common_rom_obj:.o=_blue_debug.o)
-pokered_vc_obj     := $(common_rom_obj:.o=_red_vc.o)
-pokeblue_vc_obj    := $(common_rom_obj:.o=_blue_vc.o)
+pokered_vc_obj     := $(vc_rom_obj:.o=_red_vc.o)
+pokeblue_vc_obj    := $(vc_rom_obj:.o=_blue_vc.o)
+
+pokered_main_obj        := $(languages:%=main_red_%.o)
+pokeblue_main_obj       := $(languages:%=main_blue_%.o)
+pokeblue_debug_main_obj := $(languages:%=main_blue_debug_%.o)
 
 pokered_text_obj        := $(languages:%=text_red_%.o)
 pokeblue_text_obj       := $(languages:%=text_blue_%.o)
@@ -101,6 +106,9 @@ tidy:
 	      $(pokered_vc_obj) \
 	      $(pokeblue_vc_obj) \
 	      $(pokeblue_debug_obj) \
+	      $(pokered_main_obj) \
+	      $(pokeblue_main_obj) \
+	      $(pokeblue_debug_main_obj) \
 	      $(pokered_text_obj) \
 	      $(pokeblue_text_obj) \
 	      $(pokeblue_debug_text_obj) \
@@ -167,6 +175,32 @@ $(foreach obj, $(pokeblue_vc_obj), $(eval $(call DEP,$(obj),$(obj:_blue_vc.o=.as
 
 endif
 
+main_scanned_deps := $(shell tools/scan_includes main.asm)
+main_common_deps := $(foreach dep,$(main_scanned_deps),$(if $(findstring {LANGUAGE},$(dep)),,$(dep)))
+locale_main_deps = \
+	data/$(1)/yes_no_menu_strings.asm \
+	data/battle/$(1)/stat_names.asm \
+	data/battle/$(1)/stat_mod_names.asm \
+	data/events/$(1)/trades.asm \
+	data/items/$(1)/names.asm \
+	data/maps/$(1)/names.asm \
+	data/moves/$(1)/field_move_names.asm \
+	data/player/$(1)/names.asm \
+	data/player/$(1)/names_list.asm \
+	data/pokemon/$(1)/dex_entries.asm \
+	data/pokemon/$(1)/names.asm \
+	data/trainers/$(1)/names.asm \
+	data/types/$(1)/names.asm
+
+main_red_%.o: main.asm $(main_common_deps) $$(call locale_main_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _RED -D LANGUAGE=$* -o $@ $<
+
+main_blue_%.o: main.asm $(main_common_deps) $$(call locale_main_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D LANGUAGE=$* -o $@ $<
+
+main_blue_debug_%.o: main.asm $(main_common_deps) $$(call locale_main_deps,$$*) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) -D _BLUE -D _DEBUG -D LANGUAGE=$* -o $@ $<
+
 locale_text_deps := $(shell find text data/text -type f -name '*.asm')
 
 text_red_%.o: text.asm $(locale_text_deps) $(preinclude_deps) | rgbdscheck.o
@@ -187,15 +221,15 @@ RGBFIXFLAGS += -jsv -n 0 -k 01 -l 0x33 -m MBC5+RAM+BATTERY -r 03
 pokered_vc.gbc:     RGBFIXFLAGS += -p 0x00 -t "POKEMON RED"
 pokeblue_vc.gbc:    RGBFIXFLAGS += -p 0x00 -t "POKEMON BLUE"
 
-pokered_%.gbc: $(pokered_obj) text_red_%.o layout.link
+pokered_%.gbc: $(pokered_obj) main_red_%.o text_red_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON RED" $@
 
-pokeblue_%.gbc: $(pokeblue_obj) text_blue_%.o layout.link
+pokeblue_%.gbc: $(pokeblue_obj) main_blue_%.o text_blue_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0x00 -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0x00 -t "POKEMON BLUE" $@
 
-pokeblue_debug_%.gbc: $(pokeblue_debug_obj) text_blue_debug_%.o layout.link
+pokeblue_debug_%.gbc: $(pokeblue_debug_obj) main_blue_debug_%.o text_blue_debug_%.o layout.link
 	$(RGBLINK) $(RGBLINKFLAGS) -p 0xff -l layout.link -m $(@:.gbc=.map) -n $(@:.gbc=.sym) -o $@ $(filter %.o,$^)
 	$(RGBFIX) $(RGBFIXFLAGS) -p 0xff -t "POKEMON BLUE" $@
 

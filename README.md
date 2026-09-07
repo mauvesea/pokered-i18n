@@ -15,10 +15,12 @@ independently and stored in its own 64-bank page:
 - `4`: Italian (`text/it`, `data/text/it`)
 
 The language directories include map dialogue, shared messages, Pokédex entries,
-and move names. The non-English directories initially contain English copies and
-can be translated without changing symbol names. The linker builds one normal
-ROM per directory, and `tools/merge_locales.py` combines them into the final
-MBC5 image.
+move names, and localized data tables such as item, Pokémon, trainer, type, and
+map names. Data tables keep their original category and add a language directory,
+for example `data/items/en/names.asm`. The non-English directories initially
+contain English copies and can be translated without changing symbol names. The
+linker builds one normal ROM per language, and `tools/merge_locales.py` combines
+them into the final MBC5 image.
 
 Accented Unicode characters in source text are decomposed automatically. The
 font's `^`, `~`, `` ` ``, `´`, and `¨` tiles are placed above the following base

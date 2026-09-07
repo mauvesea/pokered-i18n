@@ -621,7 +621,7 @@ DrawTileLine:
 	pop bc
 	ret
 
-INCLUDE "data/pokemon/dex_entries.asm"
+INCLUDE "data/pokemon/{LANGUAGE}/dex_entries.asm"
 
 PokedexToIndex:
 	; converts the Pokédex number at [wPokedexNum] to an index

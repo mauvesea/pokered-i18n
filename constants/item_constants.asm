@@ -1,6 +1,6 @@
 ; item ids
 ; indexes for:
-; - ItemNames (see data/items/names.asm)
+; - ItemNames (see data/items/<language>/names.asm)
 ; - ItemPrices (see data/items/prices.asm)
 ; - TechnicalMachinePrices (see data/items/tm_prices.asm)
 ; - KeyItemFlags (see data/items/key_items.asm)

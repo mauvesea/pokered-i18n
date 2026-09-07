@@ -277,7 +277,7 @@ INCLUDE "data/trainers/move_choices.asm"
 
 INCLUDE "data/trainers/pic_pointers_money.asm"
 
-INCLUDE "data/trainers/names.asm"
+INCLUDE "data/trainers/{LANGUAGE}/names.asm"
 
 INCLUDE "engine/battle/misc.asm"
 

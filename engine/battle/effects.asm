@@ -757,7 +757,7 @@ PrintStatText:
 	ld bc, STAT_NAME_LENGTH
 	jp CopyData
 
-INCLUDE "data/battle/stat_mod_names.asm"
+INCLUDE "data/battle/{LANGUAGE}/stat_mod_names.asm"
 
 INCLUDE "data/battle/stat_modifiers.asm"
 

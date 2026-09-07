@@ -18,7 +18,7 @@ DEF SLOTS_OUTTOLUNCH   EQU $fe
 DEF SLOTS_SOMEONESKEYS EQU $ff
 
 ; in game trades
-; TradeMons indexes (see data/events/trades.asm)
+; TradeMons indexes (see data/events/<language>/trades.asm)
 	const_def
 	const TRADE_FOR_TERRY
 	const TRADE_FOR_MARCEL

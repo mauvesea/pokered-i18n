@@ -588,7 +588,7 @@ LoadTownMapEntry:
 
 INCLUDE "data/maps/town_map_entries.asm"
 
-INCLUDE "data/maps/names.asm"
+INCLUDE "data/maps/{LANGUAGE}/names.asm"
 
 MonNestIcon:
 	INCBIN "gfx/town_map/mon_nest_icon.1bpp"

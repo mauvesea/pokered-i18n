@@ -7,7 +7,7 @@ DEF NUM_MOVES EQU 4
 DEF BASE_STAT_LEVEL EQU 7
 DEF MAX_STAT_LEVEL EQU 13
 
-; VitaminStats indexes (see data/battle/stat_names.asm)
+; VitaminStats indexes (see data/battle/<language>/stat_names.asm)
 	const_def 1
 	const STAT_HEALTH
 	const STAT_ATTACK
@@ -16,7 +16,7 @@ DEF MAX_STAT_LEVEL EQU 13
 	const STAT_SPECIAL
 DEF NUM_STATS EQU const_value - 1
 
-; StatModTextStrings indexes (see data/battle/stat_mod_names.asm)
+; StatModTextStrings indexes (see data/battle/<language>/stat_mod_names.asm)
 	const_def
 	const MOD_ATTACK
 	const MOD_DEFENSE
