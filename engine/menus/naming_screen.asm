@@ -93,12 +93,12 @@ DisplayNamingScreen:
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
 	farcall LoadMonPartySpriteGfx
-	hlcoord 0, 4
+	hlcoord 0, 5
 	ld b, 9
 	ld c, 18
 	call TextBoxBorder
 	call PrintNamingText
-	ld a, 3
+	ld a, 4
 	ld [wTopMenuItemY], a
 	ld a, 1
 	ld [wTopMenuItemX], a
@@ -192,17 +192,32 @@ DisplayNamingScreen:
 	dw .ABStartReturnPoint
 	dw .pressedA
 
-.pressedA_changedCase
+.pressedA_changedPage
 	pop de
 	ld de, .selectReturnPoint
 	push de
 .pressedSelect
-	ld a, [wAlphabetCase]
-	xor $1
-	ld [wAlphabetCase], a
+	ld a, [wNamingScreenPage]
+	inc a
+	cp 3
+	jr c, .storePage
+	xor a
+.storePage
+	ld [wNamingScreenPage], a
 	ret
 
 .pressedStart
+	call CalcStringLength
+	ld a, b
+	and a
+	jr z, .submitName
+	dec hl
+	ld a, [hl]
+	cp '^'
+	jr c, .submitName
+	cp '¨' + 1
+	ret c ; don't submit an incomplete diacritic sequence
+.submitName
 	ld a, 1
 	ld [wNamingScreenSubmitName], a
 	ret
@@ -216,11 +231,11 @@ DisplayNamingScreen:
 	jr z, .pressedStart
 .didNotPressED
 	ld a, [wCurrentMenuItem]
-	cp $6 ; case switch row
+	cp $6 ; page switch row
 	jr nz, .didNotPressCaseSwitch
 	ld a, [wTopMenuItemX]
-	cp $1 ; case switch column
-	jr z, .pressedA_changedCase
+	cp $1 ; page switch column
+	jr z, .pressedA_changedPage
 .didNotPressCaseSwitch
 	ld hl, wMenuCursorLocation
 	ld a, [hli]
@@ -231,45 +246,95 @@ DisplayNamingScreen:
 	ld [wNamingScreenLetter], a
 	call CalcStringLength
 	ld a, [wNamingScreenLetter]
-	cp 'ﾞ'
-	ld de, Dakutens
-	jr z, .dakutensAndHandakutens
-	cp 'ﾟ'
-	ld de, Handakutens
-	jr z, .dakutensAndHandakutens
+	cp '^'
+	jr c, .notDiacritic
+	cp '¨' + 1
+	jr nc, .notDiacritic
+	; A second dead key replaces the first one instead of consuming space.
+	ld a, b
+	and a
+	jr z, .checkDiacriticLength
+	dec hl
+	ld a, [hl]
+	cp '^'
+	jr c, .restoreHLAndCheckDiacriticLength
+	cp '¨' + 1
+	jr nc, .restoreHLAndCheckDiacriticLength
+	ld a, [wNamingScreenLetter]
+	ld [hl], a
+	jr .playedSound
+.restoreHLAndCheckDiacriticLength
+	inc hl
+.checkDiacriticLength
+	; A dead key must leave room for its base letter and the terminator.
 	ld a, [wNamingScreenType]
 	cp NAME_MON_SCREEN
+	ld a, b
+	jr nc, .checkMonDiacriticLength
+	cp PLAYER_NAME_LENGTH - 2
+	jr .checkNameLength
+.checkMonDiacriticLength
+	cp NAME_LENGTH - 2
+	jr .checkNameLength
+.notDiacritic
+	; If a dead key is pending, only accept one of its supported letters.
+	ld a, b
+	and a
+	jr z, .checkRegularLength
+	dec hl
+	ld a, [hl]
+	inc hl
+	cp '^'
+	jr c, .checkRegularLength
+	cp '¨' + 1
+	jr nc, .checkRegularLength
+	push hl
+	push bc
+	call CanApplyNamingScreenDiacritic
+	pop bc
+	pop hl
+	ret nc
+.checkRegularLength
+	ld a, [wNamingScreenType]
+	cp NAME_MON_SCREEN
+	ld a, b
 	jr nc, .checkMonNameLength
-	ld a, [wNamingScreenNameLength]
 	cp PLAYER_NAME_LENGTH - 1
 	jr .checkNameLength
 .checkMonNameLength
-	ld a, [wNamingScreenNameLength]
 	cp NAME_LENGTH - 1
 .checkNameLength
 	jr c, .addLetter
 	ret
-
-.dakutensAndHandakutens
-	push hl
-	call DakutensAndHandakutens
-	pop hl
-	ret nc
-	dec hl
 .addLetter
 	ld a, [wNamingScreenLetter]
 	ld [hli], a
 	ld [hl], '@'
+.playedSound
 	ld a, SFX_PRESS_AB
 	call PlaySound
 	ret
 .pressedB
-	ld a, [wNamingScreenNameLength]
+	call CalcStringLength
+	ld a, b
 	and a
 	ret z
-	call CalcStringLength
 	dec hl
 	ld [hl], '@'
+	; Delete a complete accented character (dead key + base) in one press.
+	ld a, b
+	cp 2
+	ret c
+	dec hl
+	ld a, [hl]
+	cp '^'
+	jr c, .keepPreviousCharacter
+	cp '¨' + 1
+	jr nc, .keepPreviousCharacter
+	ld [hl], '@'
+	ret
+.keepPreviousCharacter
+	inc hl
 	ret
 .pressedRight
 	ld a, [wCurrentMenuItem]
@@ -326,8 +391,7 @@ DisplayNamingScreen:
 LoadEDTile:
 	ld de, ED_Tile
 	ld hl, vFont tile $70
-	; BUG: BANK("Home") should be BANK(ED_Tile), although it coincidentally works as-is
-	lb bc, BANK("Home"), (ED_TileEnd - ED_Tile) / TILE_1BPP_SIZE
+	lb bc, BANK(ED_Tile), (ED_TileEnd - ED_Tile) / TILE_1BPP_SIZE
 	jp CopyVideoDataDouble
 
 ED_Tile:
@@ -337,13 +401,16 @@ ED_TileEnd:
 PrintAlphabet:
 	xor a
 	ldh [hAutoBGTransferEnabled], a
-	ld a, [wAlphabetCase]
+	ld a, [wNamingScreenPage]
 	and a
-	ld de, LowerCaseAlphabet
-	jr nz, .lowercase
 	ld de, UpperCaseAlphabet
-.lowercase
-	hlcoord 2, 5
+	jr z, .gotAlphabet
+	dec a
+	ld de, LowerCaseAlphabet
+	jr z, .gotAlphabet
+	ld de, SymbolAlphabet
+.gotAlphabet
+	hlcoord 2, 6
 	lb bc, 5, 9 ; 5 rows, 9 columns
 .outerLoop
 	push bc
@@ -368,15 +435,17 @@ INCLUDE "data/text/alphabets.asm"
 
 PrintNicknameAndUnderscores:
 	call CalcStringLength
+	ld a, b
+	ld [wNamingScreenByteLength], a
 	ld a, c
 	ld [wNamingScreenNameLength], a
 	hlcoord 10, 2
-	lb bc, 1, 10
+	lb bc, 2, 10
 	call ClearScreenArea
-	hlcoord 10, 2
+	hlcoord 10, 3
 	ld de, wStringBuffer
 	call PlaceString
-	hlcoord 10, 3
+	hlcoord 10, 4
 	ld a, [wNamingScreenType]
 	cp NAME_MON_SCREEN
 	jr nc, .pokemon
@@ -393,15 +462,22 @@ PrintNicknameAndUnderscores:
 	jr nz, .placeUnderscoreLoop
 	ld a, [wNamingScreenType]
 	cp NAME_MON_SCREEN
-	ld a, [wNamingScreenNameLength]
+	ld a, [wNamingScreenByteLength]
 	jr nc, .pokemon2
 ; player or rival
+	cp PLAYER_NAME_LENGTH - 1
+	jr z, .nameIsFull
+	ld a, [wNamingScreenNameLength]
 	cp PLAYER_NAME_LENGTH - 1
 	jr .checkEmptySpaces
 .pokemon2
 	cp NAME_LENGTH - 1
+	jr z, .nameIsFull
+	ld a, [wNamingScreenNameLength]
+	cp NAME_LENGTH - 1
 .checkEmptySpaces
 	jr nz, .placeRaisedUnderscore ; jump if empty spaces remain
+.nameIsFull
 	; when all spaces are filled, force the cursor onto the ED tile,
 	; and keep the last underscore raised
 	call EraseMenuCursor
@@ -409,44 +485,50 @@ PrintNicknameAndUnderscores:
 	ld [wTopMenuItemX], a
 	ld a, $5 ; "ED" y coord
 	ld [wCurrentMenuItem], a
-	ld a, [wNamingScreenType]
-	cp NAME_MON_SCREEN
-	ld a, NAME_LENGTH - 2
-	jr nc, .placeRaisedUnderscore
-	ld a, PLAYER_NAME_LENGTH - 2
+	ld a, [wNamingScreenNameLength]
+	dec a
 .placeRaisedUnderscore
 	ld c, a
 	ld b, $0
-	hlcoord 10, 3
+	hlcoord 10, 4
 	add hl, bc
 	ld [hl], $77 ; raised underscore tile id
 	ret
 
-DakutensAndHandakutens:
-	push de
-	call CalcStringLength
-	dec hl
-	ld a, [hl]
-	pop hl
-	ld de, $2
-	call IsInArray
-	ret nc
-	inc hl
-	ld a, [hl]
-	ld [wNamingScreenLetter], a
-	ret
+; Input: a = pending diacritic. Return carry if the selected letter supports it.
+CanApplyNamingScreenDiacritic:
+	cp '~'
+	ld hl, NamingScreenVowels
+	jr nz, .search
+	ld hl, NamingScreenTildeLetters
+.search
+	ld a, [wNamingScreenLetter]
+	ld de, 1
+	jp IsInArray
 
-INCLUDE "data/text/dakutens.asm"
+NamingScreenVowels:
+	db "AEIOUaeiou", -1
 
-; calculates the length of the string at wStringBuffer and stores it in c
+NamingScreenTildeLetters:
+	db "Nn", -1
+
+; Calculate the byte length in b and the displayed character length in c.
+; Diacritics are stored as dead-key bytes and do not advance the text cursor.
 CalcStringLength:
 	ld hl, wStringBuffer
+	ld b, $0
 	ld c, $0
 .loop
 	ld a, [hl]
 	cp '@'
 	ret z
 	inc hl
+	inc b
+	cp '^'
+	jr c, .countCharacter
+	cp '¨' + 1
+	jr c, .loop
+.countCharacter
 	inc c
 	jr .loop
 

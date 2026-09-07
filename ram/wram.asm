@@ -945,13 +945,16 @@ wEvoMonTileOffset:: db
 wEvoCancelled:: db
 
 NEXTU
+; Number of displayed characters in the current name.
 wNamingScreenNameLength:: db
 ; non-zero when the player has chosen to submit the name
 wNamingScreenSubmitName:: db
 ; 0 = upper case
 ; 1 = lower case
-wAlphabetCase:: db
-	ds 1
+; 2 = symbols
+wNamingScreenPage:: db
+; Number of encoded bytes in the current name, including dead keys.
+wNamingScreenByteLength:: db
 wNamingScreenLetter:: db
 
 NEXTU
