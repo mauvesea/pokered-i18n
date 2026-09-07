@@ -1,28 +1,32 @@
 _Route11SuperNerd2EndBattleText::
-	text "Whoa!"
-	line "You spark plug!"
+	text "Au!"
+	line "Der Funke ist"
+	cont "übergesprungen!"
 	prompt
 
 _Route11SuperNerd2AfterBattleText::
-	text "Well, better get"
-	line "back to work."
+	text "Ich mache mich"
+	line "besser wieder an"
+	cont "die Arbeit."
 	done
 
 _Route11Youngster4BattleText::
-	text "My #MON should"
-	line "be ready by now!"
+	text "Meine #MON"
+	line "müßten bereit"
+	cont "sein!"
 	done
 
 _Route11Youngster4EndBattleText::
-	text "Too"
-	line "much, too young!"
+	text "Das"
+	line "war schwach!"
 	prompt
 
 _Route11Youngster4AfterBattleText::
-	text "I better go find"
-	line "stronger ones!"
+	text "Ich muß ein"
+	line "paar Stärkere"
+	cont "fangen!"
 	done
 
 _Route11DiglettsCaveSignText::
-	text "DIGLETT's CAVE"
+	text "DIGDAS HÖHLE"
 	done

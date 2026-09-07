@@ -1,31 +1,33 @@
 _VictoryRoad1FCooltrainerFBattleText::
-	text "I wonder if you"
-	line "are good enough"
-	cont "for me!"
+	text "Glaubst Du etwa,"
+	line "Du kannst es mit"
+	cont "mir aufnehmen?"
 	done
 
 _VictoryRoad1FCooltrainerFEndBattleText::
-	text "I"
-	line "lost out!"
+	text "Ich"
+	line "bin raus!"
 	prompt
 
 _VictoryRoad1FCooltrainerFAfterBattleText::
-	text "I never wanted to"
-	line "lose to anybody!"
+	text "Dabei wollte ich"
+	line "nie verlieren!"
 	done
 
 _VictoryRoad1FCooltrainerMBattleText::
-	text "I can see you're"
-	line "good! Let me see"
-	cont "exactly how good!"
+	text "Ich glaube, Du"
+	line "bist gut! Gut"
+	cont "genug, um mich"
+	cont "zu schlagen?"
 	done
 
 _VictoryRoad1FCooltrainerMEndBattleText::
-	text "I"
-	line "had a chance..."
+	text "Immerhin"
+	line "hatte ich eine"
+	cont "Chance!"
 	prompt
 
 _VictoryRoad1FCooltrainerMAfterBattleText::
-	text "I concede, you're"
-	line "better than me!"
+	text "Ich muß gestehen,"
+	line "Du bist besser!"
 	done

@@ -1,56 +1,63 @@
 _SilphCo8FSilphWorkerMSilphIsFinishedText::
-	text "I wonder if SILPH"
-	line "is finished..."
+	text "Ob die SILPH CO."
+	line "schon erledigt"
+	cont "ist?"
 	done
 
 _SilphCo8FSilphWorkerMThanksForSavingUsText::
-	text "Thanks for saving"
-	line "us!"
+	text "Vielen Dank für"
+	line "unsere Rettung!"
 	done
 
 _SilphCo8FRocket1BattleText::
-	text "That's as far as"
-	line "you'll go!"
+	text "Endstation! Bis"
+	line "hierher und nicht"
+	cont "weiter!"
 	done
 
 _SilphCo8FRocket1EndBattleText::
-	text "Not"
-	line "enough grit!"
+	text "Mist, "
+	line "der Mut hat mich"
+	cont "verlassen!"
 	prompt
 
 _SilphCo8FRocket1AfterBattleText::
-	text "If you don't turn"
-	line "back, I'll call"
-	cont "for backup!"
+	text "Hau lieber ab,"
+	line "sonst rufe ich"
+	cont "Verstärkung!"
 	done
 
 _SilphCo8FScientistBattleText::
-	text "You're causing us"
-	line "problems!"
+	text "Du bereitest uns"
+	line "nichts als Ärger!"
 	done
 
 _SilphCo8FScientistEndBattleText::
-	text "Huh?"
-	line "I lost?"
+	text "Huch!"
+	line "Verloren?"
 	prompt
 
 _SilphCo8FScientistAfterBattleText::
-	text "So, what do you"
-	line "think of SILPH"
-	cont "BUILDING's maze?"
+	text "Das SILPH CO.-"
+	line "Gebäude ist ein"
+	cont "wahres Labyrinth,"
+	cont "nicht wahr?"
 	done
 
 _SilphCo8FRocket2BattleText::
-	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	text "Ich bin einer der"
+	line "vier berüchtigten"
+	cont "ROCKET-BRÜDER!"
 	done
 
 _SilphCo8FRocket2EndBattleText::
-	text "Whoo!"
-	line "Oh brothers!"
+	text "Ups!"
+	line "Brüder, ich habe"
+	cont "versagt!"
 	prompt
 
 _SilphCo8FRocket2AfterBattleText::
-	text "I'll leave you up"
-	line "to my brothers!"
+	text "Dann werden sich"
+	line "meine Brüder"
+	cont "um Dich kümmern!"
 	done

@@ -1,123 +1,140 @@
 _ViridianForestYoungster1Text::
-	text "I came here with"
-	line "some friends!"
+	text "Meine Freunde und"
+	line "ich haben Dich"
+	cont "schon erwartet..."
 
-	para "They're out for"
-	line "#MON fights!"
+	para "Unsere #MON"
+	line "wollen kämpfen!!!"
 	done
 
 _ViridianForestYoungster2BattleText::
-	text "Hey! You have"
-	line "#MON! Come on!"
-	cont "Let's battle'em!"
+	text "Hey! Du hast auch"
+	line "#MON! Los!"
+	cont "Laß uns kämpfen!"
 	done
 
 _ViridianForestYoungster2EndBattleText::
-	text "No!"
-	line "CATERPIE can't"
-	cont "cut it!"
+	text "Ah!"
+	line "RAUPY hat es"
+	cont "nicht geschafft!"
 	prompt
 
 _ViridianForestYoungster2AfterBattleText::
-	text "Ssh! You'll scare"
-	line "the bugs away!"
+	text "Psst! Sei leise!"
+	line "Du verjagst"
+	cont "alle Käfer..."
 	done
 
 _ViridianForestYoungster3BattleText::
-	text "Yo! You can't jam"
-	line "out if you're a"
-	cont "#MON trainer!"
+	text "Hey! Ein #MON-"
+	line "Trainer stiehlt"
+	cont "sich nicht so"
+	cont "einfach davon!!!"
 	done
 
 _ViridianForestYoungster3EndBattleText::
-	text "Huh?"
-	line "I ran out of"
-	cont "#MON!"
+	text "Oh!"
+	line "Ich habe kein"
+	cont "kampfbereites"
+	cont "#MON mehr!"
 	prompt
 
 _ViridianForestYoungster3AfterBattleText::
-	text "Darn! I'm going"
-	line "to catch some"
-	cont "stronger ones!"
+	text "So ein Mist! Ich"
+	line "muß ein paar"
+	cont "Stärkere fangen!"
 	done
 
 _ViridianForestYoungster4BattleText::
-	text "Hey, wait up!"
-	line "What's the hurry?"
+	text "Hey, warte mal!"
+	line "Warum die Eile?"
 	done
 
 _ViridianForestYoungster4EndBattleText::
-	text "I"
-	line "give! You're good"
-	cont "at this!"
+	text "Uff!"
+	line "Du bist zu gut!"
+	cont "Ich gebe auf!"
 	prompt
 
 _ViridianForestYoungster4AfterBattleText::
-	text "Sometimes, you"
-	line "can find stuff on"
-	cont "the ground!"
+	text "Mit ein bißchen"
+	line "Glück findet man"
+	cont "unterwegs Items!"
 
-	para "I'm looking for"
-	line "the stuff I"
-	cont "dropped!"
+	para "Ich muß hier"
+	line "irgendwo etwas"
+	cont "verloren haben..."
 	done
 
 _ViridianForestYoungster5Text::
-	text "I ran out of #"
-	line "BALLs to catch"
-	cont "#MON with!"
+	text "Verdammt!"
+	line "Mir sind die"
+	cont "#BÄLLE"
+	cont "ausgegangen!"
 
-	para "You should carry"
-	line "extras!"
+	para "Wie fange ich nun"
+	line "bloß #MON?"
+
+	para "Du solltest immer"
+	line "genug #BÄLLE"
+	cont "bei Dir haben!"
 	done
 
 _ViridianForestTrainerTips1Text::
-	text "TRAINER TIPS"
+	text "TIPS FÜR TRAINER"
 
-	para "If you want to"
-	line "avoid battles,"
-	cont "stay away from"
-	cont "grassy areas!"
+	para "Wenn Du Kämpfe"
+	line "meiden möchtest,"
+	cont "bleibe hohem"
+	cont "Gras fern!"
 	done
 
 _ViridianForestUseAntidoteSignText::
-	text "For poison, use"
-	line "ANTIDOTE! Get it"
-	cont "at #MON MARTs!"
+	text "Bei Vergiftungen"
+	line "hat sich das"
+	cont "GEGENGIFT aus dem"
+	cont "PKMN-SUPERMARKT"
+	cont "bewährt."
 	done
 
 _ViridianForestTrainerTips2Text::
-	text "TRAINER TIPS"
+	text "TIPS FÜR TRAINER"
 
-	para "Contact PROF.OAK"
-	line "via PC to get"
-	cont "your #DEX"
-	cont "evaluated!"
+	para "Du kannst Deinen"
+	line "#DEX jederzeit"
+	cont "von PROF. EICH"
+	cont "via PC bewerten"
+	cont "lassen!"
 	done
 
 _ViridianForestTrainerTips3Text::
-	text "TRAINER TIPS"
+	text "TIPS FÜR TRAINER"
 
-	para "No stealing of"
-	line "#MON from"
-	cont "other trainers!"
-	cont "Catch only wild"
-	cont "#MON!"
+	para "Es ist verboten,"
+	line "anderen Trainern"
+	cont "#MON zu"
+	cont "stehlen! Fang nur"
+	cont "wilde #MON!"
 	done
 
 _ViridianForestTrainerTips4Text::
-	text "TRAINER TIPS"
+	text "TIPS FÜR TRAINER"
 
-	para "Weaken #MON"
-	line "before attempting"
-	cont "capture!"
+	para "Geschwächte"
+	line "#MON sind"
+	cont "leichter zu"
+	cont "fangen!"
 
-	para "When healthy,"
-	line "they may escape!"
+	para "Sind sie bei"
+	line "Kräften, könnten"
+	cont "sie fliehen!"
 	done
 
 _ViridianForestLeavingSignText::
-	text "LEAVING"
-	line "VIRIDIAN FOREST"
-	cont "PEWTER CITY AHEAD"
+	text "AUF WIEDERSEHEN"
+	line "IM VERTANIA-WALD."
+
+	para "DER NÄCHSTE ORT"
+	line "IST MARMORIA"
+	cont "CITY."
 	done

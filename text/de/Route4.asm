@@ -1,35 +1,40 @@
 _Route4CooltrainerF1Text::
-	text "Ouch! I tripped"
-	line "over a rocky"
-	cont "#MON, GEODUDE!"
+	text "Aua! Ich bin über"
+	line "ein KLEINSTEIN"
+	cont "gestolpert, ein"
+	cont "STEIN-#MON!"
 	done
 
 _Route4CooltrainerF2BattleText::
-	text "I came to get my"
-	line "mushroom #MON!"
+	text "Ich bin hier, um"
+	line "PILZ-#MON"
+	cont "zu fangen!"
 	done
 
 _Route4CooltrainerF2EndBattleText::
-	text "Oh! My cute"
-	line "mushroom #MON!"
+	text "Ach,"
+	line "PILZ-#MON"
+	cont "sind ja so süß!"
 	prompt
 
 _Route4CooltrainerF2AfterBattleText::
-	text "There might not"
-	line "be any more"
-	cont "mushrooms here."
+	text "Es dürfte hier"
+	line "keine PILZ-"
+	cont "#MON mehr"
+	cont "geben."
 
-	para "I think I got"
-	line "them all."
+	para "Ich glaube, ich"
+	line "habe alle"
+	cont "gefangen."
 	done
 
 _Route4MtMoonSignText::
-	text "MT.MOON"
-	line "Tunnel Entrance"
+	text "MONDBERG"
+	line "Tunneleingang"
 	done
 
 _Route4SignText::
 	text "ROUTE 4"
-	line "MT.MOON -"
-	cont "CERULEAN CITY"
+	line "MONDBERG -"
+	cont "AZURIA CITY"
 	done

@@ -187,7 +187,11 @@ DisplayIntroNameTextBox:
 .namestring
 	db "NAME@"
 
+LocalizedDefaultNamesStart:
 INCLUDE "data/player/{LANGUAGE}/names.asm"
+LocalizedDefaultNamesEnd:
+	assert LocalizedDefaultNamesEnd - LocalizedDefaultNamesStart <= $30
+	ds $30 - (LocalizedDefaultNamesEnd - LocalizedDefaultNamesStart)
 
 GetDefaultName:
 ; a = name index
@@ -213,7 +217,11 @@ GetDefaultName:
 	ld bc, NAME_BUFFER_LENGTH
 	jp CopyData
 
+LocalizedDefaultNamesListStart:
 INCLUDE "data/player/{LANGUAGE}/names_list.asm"
+LocalizedDefaultNamesListEnd:
+	assert LocalizedDefaultNamesListEnd - LocalizedDefaultNamesListStart <= $30
+	ds $30 - (LocalizedDefaultNamesListEnd - LocalizedDefaultNamesListStart)
 
 LinkMenuEmptyText:
 	text_end

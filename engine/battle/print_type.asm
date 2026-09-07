@@ -49,4 +49,8 @@ PrintType_:
 	pop hl
 	jp PlaceString
 
+LocalizedTypeNamesStart:
 INCLUDE "data/types/{LANGUAGE}/names.asm"
+LocalizedTypeNamesEnd:
+	assert LocalizedTypeNamesEnd - LocalizedTypeNamesStart <= $a0
+	ds $a0 - (LocalizedTypeNamesEnd - LocalizedTypeNamesStart)

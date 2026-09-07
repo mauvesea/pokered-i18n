@@ -1,0 +1,14 @@
+Locale import (de): labels not found
+Source: /home/mauvesea/pokered-de
+Matched labels: 2813
+Destination labels not found in source: 2
+Source labels without a destination: 3
+
+Destination labels not found in source:
+- _SilphCo11FGiovanniILostAgainText (text/de/SilphCo11F.asm)
+- _SilphCo11FPorygonText (text/de/SilphCo11F.asm)
+
+Source labels without a destination:
+- _CF50ExclamationText (data/text/text_2.asm)
+- _SilphCo10FGiovanniILostAgainText (text/SilphCo11F.asm)
+- _SilphCo10FPorygonText (text/SilphCo11F.asm)

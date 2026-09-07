@@ -14,7 +14,11 @@ INCLUDE "engine/battle/safari_zone.asm"
 INCLUDE "engine/movie/title.asm"
 INCLUDE "engine/pokemon/load_mon_data.asm"
 INCLUDE "data/items/prices.asm"
+LocalizedItemNamesStart:
 INCLUDE "data/items/{LANGUAGE}/names.asm"
+LocalizedItemNamesEnd:
+	assert LocalizedItemNamesEnd - LocalizedItemNamesStart <= $380
+	ds $380 - (LocalizedItemNamesEnd - LocalizedItemNamesStart)
 INCLUDE "data/text/unused_names.asm"
 INCLUDE "engine/gfx/sprite_oam.asm"
 INCLUDE "engine/gfx/oam_dma.asm"
@@ -129,7 +133,11 @@ INCLUDE "engine/overworld/ledges.asm"
 
 SECTION "Pokémon Names", ROMX
 
+LocalizedPokemonNamesStart:
 INCLUDE "data/pokemon/{LANGUAGE}/names.asm"
+LocalizedPokemonNamesEnd:
+	assert LocalizedPokemonNamesEnd - LocalizedPokemonNamesStart <= $780
+	ds $780 - (LocalizedPokemonNamesEnd - LocalizedPokemonNamesStart)
 INCLUDE "engine/movie/oak_speech/clear_save.asm"
 INCLUDE "engine/events/elevator.asm"
 

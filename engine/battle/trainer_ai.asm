@@ -277,7 +277,11 @@ INCLUDE "data/trainers/move_choices.asm"
 
 INCLUDE "data/trainers/pic_pointers_money.asm"
 
+LocalizedTrainerNamesStart:
 INCLUDE "data/trainers/{LANGUAGE}/names.asm"
+LocalizedTrainerNamesEnd:
+	assert LocalizedTrainerNamesEnd - LocalizedTrainerNamesStart <= $1a0
+	ds $1a0 - (LocalizedTrainerNamesEnd - LocalizedTrainerNamesStart)
 
 INCLUDE "engine/battle/misc.asm"
 

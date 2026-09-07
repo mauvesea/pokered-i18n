@@ -1,107 +1,119 @@
 _SilphCo6FSilphWorkerM1TookOverTheBuildingText::
-	text "The ROCKETs came"
-	line "and took over the"
-	cont "building!"
+	text "Das TEAM ROCKET"
+	line "hat die Kontrolle"
+	cont "über das Gebäude"
+	cont "übernommen!"
 	done
 
 _SilphCo6FSilphWorkerM1BackToWorkText::
-	text "Well, better get"
-	line "back to work!"
+	text "OK, die Arbeit"
+	line "ruft! Los geh",$b3,"'s!"
 	done
 
 _SilphCo6FSilphWorkerMHelpMePleaseText::
-	text "Oh dear, oh dear."
-	line "Help me please!"
+	text "Oje, ojemine!"
+	line "Bitte hilf mir!"
 	done
 
 _SilphCo6FSilphWorkerMWeGotEngagedText::
-	text "We got engaged!"
-	line "Heheh!"
+	text "Wir sind"
+	line "verlobt!"
 	done
 
 _SilphCo6FSilphWorkerF1SuchACowardText::
-	text "Look at him! He's"
-	line "such a coward!"
+	text "Schau ihn Dir an,"
+	line "den Feigling!"
 	done
 
 _SilphCo6FSilphWorkerF1HaveToMarryHimText::
-	text "I feel so sorry"
-	line "for him, I have"
-	cont "to marry him!"
+	text "Ich glaube, ich"
+	line "werde ihn aus"
+	cont "Mitleid heiraten!"
 	done
 
 _SilphCo6FSilphWorkerF2TeamRocketConquerWorldText::
-	text "TEAM ROCKET is"
-	line "trying to conquer"
-	cont "the world with"
-	cont "#MON!"
+	text "Das TEAM ROCKET"
+	line "benutzt die"
+	cont "#MON bei dem"
+	cont "Versuch, die Welt"
+	cont "zu erobern!"
 	done
 
 _SilphCo6FSilphWorkerF2TeamRocketRanText::
-	text "TEAM ROCKET ran"
-	line "because of you!"
+	text "Du hast das"
+	line "TEAM ROCKET"
+	cont "in die Flucht"
+	cont "geschlagen!"
 	done
 
 _SilphCo6FSilphWorkerM3TargetedSilphText::
-	text "They must have"
-	line "targeted SILPH"
-	cont "for our #MON"
-	cont "products."
+	text "Sie müssen es"
+	line "wegen unserer"
+	cont "#MON-Produkte"
+	cont "auf die SILPH CO."
+	cont "abgesehen haben!"
 	done
 
 _SilphCo6FSilphWorkerM3WorkForSilphText::
-	text "Come work for"
-	line "SILPH when you"
-	cont "get older!"
+	text "Wir würden uns"
+	line "sehr freuen, wenn"
+	cont "Du später einmal"
+	cont "für die SILPH CO."
+	cont "arbeiten würdest!"
 	done
 
 _SilphCo6FRocket1BattleText::
-	text "I am one of the 4"
-	line "ROCKET BROTHERS!"
+	text "Ich bin einer der"
+	line "vier berüchtigten"
+	cont "ROCKET-BRÜDER!"
 	done
 
 _SilphCo6FRocket1EndBattleText::
-	text "Flame"
-	line "out!"
+	text "Nein!"
+	line "Ich bin raus!"
 	prompt
 
 _SilphCo6FRocket1AfterBattleText::
-	text "No matter!"
-	line "My brothers will"
-	cont "avenge me!"
+	text "Egal! Meine"
+	line "Brüder werden"
+	cont "mich rächen!"
 	done
 
 _SilphCo6FScientistBattleText::
-	text "That rotten"
-	line "PRESIDENT!"
+	text "Dieser verdammte"
+	line "PRÄSIDENT!"
 
-	para "He shouldn't have"
-	line "sent me to the"
-	cont "TIKSI BRANCH!"
+	para "Warum will er"
+	line "ausgerechnet"
+	cont "mich nach TIKSI"
+	cont "schicken?"
 	done
 
 _SilphCo6FScientistEndBattleText::
-	text "Shoot!"
+	text "Mist!"
 	prompt
 
 _SilphCo6FScientistAfterBattleText::
-	text "TIKSI BRANCH?"
-	line "It's in Russian"
-	cont "no man's land!"
+	text "TIKSI? Das"
+	line "liegt tief im"
+	cont "Niemandsland!"
 	done
 
 _SilphCo6FRocket2BattleText::
-	text "You dare betray"
-	line "TEAM ROCKET?"
+	text "Du wagst es,"
+	line "Dich dem"
+	cont "TEAM ROCKET zu"
+	cont "widersetzen?"
 	done
 
 _SilphCo6FRocket2EndBattleText::
-	text "You"
-	line "traitor!"
+	text "Du"
+	line "elender Verräter!"
 	prompt
 
 _SilphCo6FRocket2AfterBattleText::
-	text "If you stand for"
-	line "justice, you"
-	cont "betray evil!"
+	text "Wenn Du ehrlich"
+	line "und rechtschaffen"
+	cont "bist, bekämpfst"
+	cont "Du das Böse!"
 	done

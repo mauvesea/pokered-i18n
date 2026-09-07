@@ -621,7 +621,11 @@ DrawTileLine:
 	pop bc
 	ret
 
+LocalizedPokedexEntryPointersStart:
 INCLUDE "data/pokemon/{LANGUAGE}/dex_entries.asm"
+LocalizedPokedexEntryPointersEnd:
+	assert LocalizedPokedexEntryPointersEnd - LocalizedPokedexEntryPointersStart <= $c00
+	ds $c00 - (LocalizedPokedexEntryPointersEnd - LocalizedPokedexEntryPointersStart)
 
 PokedexToIndex:
 	; converts the Pokédex number at [wPokedexNum] to an index

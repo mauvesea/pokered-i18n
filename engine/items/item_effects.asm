@@ -1425,7 +1425,11 @@ VitaminNoEffectText:
 	text_far _VitaminNoEffectText
 	text_end
 
+LocalizedStatNamesStart:
 INCLUDE "data/battle/{LANGUAGE}/stat_names.asm"
+LocalizedStatNamesEnd:
+	assert LocalizedStatNamesEnd - LocalizedStatNamesStart <= $30
+	ds $30 - (LocalizedStatNamesEnd - LocalizedStatNamesStart)
 
 ; for BOULDERBADGE when used from the
 ; ITEM window, which corresponds to

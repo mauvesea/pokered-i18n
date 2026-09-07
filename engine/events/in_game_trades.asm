@@ -94,7 +94,11 @@ InGameTrade_GetMonName:
 	ld bc, NAME_LENGTH
 	jp CopyData
 
+LocalizedTradeMonsStart:
 INCLUDE "data/events/{LANGUAGE}/trades.asm"
+LocalizedTradeMonsEnd:
+	assert LocalizedTradeMonsEnd - LocalizedTradeMonsStart <= $90
+	ds $90 - (LocalizedTradeMonsEnd - LocalizedTradeMonsStart)
 
 InGameTrade_DoTrade:
 	xor a ; NORMAL_PARTY_MENU

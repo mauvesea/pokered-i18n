@@ -588,7 +588,11 @@ LoadTownMapEntry:
 
 INCLUDE "data/maps/town_map_entries.asm"
 
+LocalizedMapNamesStart:
 INCLUDE "data/maps/{LANGUAGE}/names.asm"
+LocalizedMapNamesEnd:
+	assert LocalizedMapNamesEnd - LocalizedMapNamesStart <= $250
+	ds $250 - (LocalizedMapNamesEnd - LocalizedMapNamesStart)
 
 MonNestIcon:
 	INCBIN "gfx/town_map/mon_nest_icon.1bpp"

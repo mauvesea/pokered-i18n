@@ -1,52 +1,60 @@
 _SSAnneBowSuperNerdText::
-	text "The party's over."
-	line "The ship will be"
-	cont "departing soon."
+	text "Sperrstunde! Die"
+	line "Party ist vorbei!"
+
+	para "Das Schiff sticht"
+	line "bald in See!"
 	done
 
 _SSAnneBowSailor1Text::
-	text "Scrubbing decks"
-	line "is hard work!"
+	text "Puh! Ich werde"
+	line "das Deck wohl nie"
+	cont "sauber bekommen!"
 	done
 
 _SSAnneBowCooltrainerMText::
-	text "Urf. I feel ill."
+	text "Brrr, ich fühle"
+	line "mich elend..."
 
-	para "I stepped out to"
-	line "get some air."
+	para "An der frischen"
+	line "Luft fühle ich"
+	cont "mich besser..."
 	done
 
 _SSAnneBowSailor2BattleText::
-	text "Hey matey!"
+	text "Hey!"
 
-	para "Let's do a little"
-	line "jig!"
+	para "Wie wär's mit"
+	line "einem Tänzchen?"
 	done
 
 _SSAnneBowSailor2EndBattleText::
-	text "You're"
-	line "impressive!"
+	text "Ich bin"
+	line "beeindruckt!"
 	prompt
 
 _SSAnneBowSailor2AfterBattleText::
-	text "How many kinds of"
-	line "#MON do you"
-	cont "think there are?"
+	text "Hast Du eine"
+	line "Ahnung, wie viele"
+	cont "unterschiedliche"
+	cont "#MON es gibt?"
 	done
 
 _SSAnneBowSailor3BattleText::
-	text "Ahoy there!"
-	line "Are you seasick?"
+	text "Ahoi, Seemann!"
+	line "Bist Du seekrank?"
 	done
 
 _SSAnneBowSailor3EndBattleText::
-	text "I was"
-	line "just careless!"
+	text "Du hast"
+	line "Glück gehabt!"
 	prompt
 
 _SSAnneBowSailor3AfterBattleText::
-	text "My Pa said there"
-	line "are 100 kinds of"
-	cont "#MON. I think"
-	cont "there are more."
+	text "Mein Vater sagt,"
+	line "es gäbe 100"
+	cont "verschiedene "
+	cont "#MON. Ich"
+	cont "denke, es gibt"
+	cont "mehr..."
 	done

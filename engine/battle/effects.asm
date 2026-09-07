@@ -757,7 +757,11 @@ PrintStatText:
 	ld bc, STAT_NAME_LENGTH
 	jp CopyData
 
+LocalizedStatModNamesStart:
 INCLUDE "data/battle/{LANGUAGE}/stat_mod_names.asm"
+LocalizedStatModNamesEnd:
+	assert LocalizedStatModNamesEnd - LocalizedStatModNamesStart <= $30
+	ds $30 - (LocalizedStatModNamesEnd - LocalizedStatModNamesStart)
 
 INCLUDE "data/battle/stat_modifiers.asm"
 

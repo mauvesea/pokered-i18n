@@ -26,6 +26,16 @@ Accented Unicode characters in source text are decomposed automatically. The
 font's `^`, `~`, `` ` ``, `´`, and `¨` tiles are placed above the following base
 glyph, using the restored Japanese dakuten-style text behavior.
 
+An existing localized pokered disassembly can be imported by matching global
+labels. For example, the German import can be refreshed with:
+
+```console
+python3 tools/import_locale_labels.py ../pokered-de de \
+  --report reports/de_labels_not_found.txt --write
+```
+
+Blocks without an exact label match are left unchanged and listed in the report.
+
 To set up the toolchain, see [**INSTALL.md**](INSTALL.md).
 
 

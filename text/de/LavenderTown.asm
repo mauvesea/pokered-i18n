@@ -1,64 +1,71 @@
 _LavenderTownLittleGirlDoYouBelieveInGhostsText::
-	text "Do you believe in"
-	line "GHOSTs?"
+	text "Glaubst Du an"
+	line "GEISTER?"
 	done
 
 _LavenderTownLittleGirlSoThereAreBelieversText::
-	text "Really? So there"
-	line "are believers..."
+	text "Echt? Hätte ich"
+	line "nicht gedacht!"
 	done
 
 _LavenderTownLittleGirlHaHaGuessNotText::
-	text "Hahaha, I guess"
-	line "not."
+	text "Hahaha, natürlich"
+	line "nicht!"
 
-	para "That white hand"
-	line "on your shoulder,"
-	cont "it's not real."
+	para "Und diese weiße"
+	line "Hand da auf"
+	cont "Deiner Schulter"
+	cont "ist natürlich"
+	cont "nicht echt!"
 	done
 
 _LavenderTownCooltrainerMText::
-	text "This town is known"
-	line "as the grave site"
-	cont "of #MON."
+	text "Diese Stadt ist"
+	line "als Ruhestätte"
+	cont "für #MON"
+	cont "bekannt."
 
-	para "Memorial services"
-	line "are held in"
-	cont "#MON TOWER."
+	para "Im #MON-TURM"
+	line "werden Andachten"
+	cont "gehalten."
 	done
 
 _LavenderTownSuperNerdText::
-	text "GHOSTs appeared"
-	line "in #MON TOWER."
+	text "GEISTER spuken"
+	line "im #MON-TURM."
 
-	para "I think they're"
-	line "the spirits of"
-	cont "#MON that the"
-	cont "ROCKETs killed."
+	para "Ich glaube, das"
+	line "sind die Geister"
+	cont "jener #MON,"
+	cont "die das TEAM"
+	cont "ROCKET auf dem"
+	cont "Gewissen hat!"
 	done
 
 _LavenderTownSignText::
-	text "LAVENDER TOWN"
-	line "The Noble Purple"
-	cont "Town"
+	text "LAVANDIA"
+	line "Die edle,"
+	cont "violette Stadt!"
 	done
 
 _LavenderTownSilphScopeSignText::
-	text "New SILPH SCOPE!"
+	text "SILPH SCOPE!"
 
-	para "Make the Invisible"
-	line "Plain to See!"
+	para "Macht das"
+	line "Unsichtbare"
+	cont "sichtbar!"
 
 	para "SILPH CO."
 	done
 
 _LavenderTownPokemonHouseSignText::
-	text "LAVENDER VOLUNTEER"
-	line "#MON HOUSE"
+	text "LAVANDIA"
+	line "#MON-HAUS"
 	done
 
 _LavenderTownPokemonTowerSignText::
-	text "May the Souls of"
-	line "#MON Rest Easy"
-	cont "#MON TOWER"
+	text "Mögen die Seelen"
+	line "der #MON im"
+	cont "#MON-TURM"
+	cont "in Frieden ruhen!"
 	done

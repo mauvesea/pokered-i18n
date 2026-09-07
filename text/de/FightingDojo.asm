@@ -1,130 +1,148 @@
 _FightingDojoKarateMasterText::
-	text "Grunt!"
+	text "Willkommen!"
 
-	para "I am the KARATE"
-	line "MASTER! I am the"
-	cont "LEADER here!"
+	para "Ich bin der"
+	line "KARATE-MEISTER!"
+	cont "Ich leite diese"
+	cont "PKMN-ARENA!"
 
-	para "You wish to"
-	line "challenge us?"
-	cont "Expect no mercy!"
+	para "Du forderst mich"
+	line "heraus? Also gut!"
+	cont "Ich kenne keine"
+	cont "Gnade!"
 
-	para "Fwaaa!"
+	para "Los geh",$B3,"'s!"
 	done
 
 _FightingDojoKarateMasterDefeatedText::
-	text "Hwa!"
-	line "Arrgh! Beaten!"
+	text ""
+	line "Arrgh! Ich wurde"
+	cont "geschlagen!"
 	prompt
 
 _FightingDojoKarateMasterIWillGiveYouAPokemonText::
-	text "Indeed, I have"
-	line "lost!"
+	text "Ich bin Deiner"
+	line "Gnade unwürdig!"
 
-	para "But, I beseech"
-	line "you, do not take"
-	cont "our emblem as"
-	cont "your trophy!"
+	para "Trotzdem flehe"
+	line "ich Dich an,"
+	cont "unser Emblem"
+	cont "nicht als Trophäe"
+	cont "mitzunehmen!"
 
-	para "In return, I will"
-	line "give you a prized"
-	cont "fighting #MON!"
+	para "Zum Ersatz gebe"
+	line "ich Dir ein"
+	cont "preisgekröntes"
+	cont "KAMPF-#MON!"
 
-	para "Choose whichever"
-	line "one you like!"
+	para "Wähle eines von"
+	line "beiden aus!"
 	done
 
 _FightingDojoKarateMasterStayAndTrainWithUsText::
-	text "Ho!"
+	text "Hai!"
 
-	para "Stay and train at"
-	line "Karate with us!"
+	para "Bleibe doch hier"
+	line "und trainiere"
+	cont "Karate mit uns!"
 	done
 
 _FightingDojoBlackbelt1BattleText::
-	text "Hoargh! Take your"
-	line "shoes off!"
+	text "Stop! Ziehe Deine"
+	line "Schuhe aus!"
 	done
 
 _FightingDojoBlackbelt1EndBattleText::
-	text "I give"
-	line "up!"
+	text ""
+	line "Ich gebe auf!"
 	prompt
 
 _FightingDojoBlackbelt1AfterBattleText::
-	text "You wait 'til you"
-	line "see our Master!"
+	text "Warte nur, bis Du"
+	line "unseren Meister"
+	cont "triffst!"
 
-	para "I'm a small fry"
-	line "compared to him!"
+	para "Verglichen mit"
+	line "ihm bin ich ein"
+	cont "kleiner Fisch!"
 	done
 
 _FightingDojoBlackbelt2BattleText::
-	text "I hear you're"
-	line "good! Show me!"
+	text "Du sollst sehr"
+	line "gut sein!"
+	cont "Beweise es mir!"
 	done
 
 _FightingDojoBlackbelt2EndBattleText::
-	text "Judge!"
-	line "1 point!"
+	text ""
+	line "Schiedsrichter!"
+	cont "1 Punkt!"
 	prompt
 
 _FightingDojoBlackbelt2AfterBattleText::
-	text "Our Master is a"
-	line "pro fighter!"
+	text "Unser Meister ist"
+	line "ein echter Profi!"
 	done
 
 _FightingDojoBlackbelt3BattleText::
-	text "Nothing tough"
-	line "frightens me!"
+	text "Keine"
+	line "Herausforderung "
+	cont "ist mir zu hart!"
 
-	para "I break boulders"
-	line "for training!"
+	para "Ich zertrümmere"
+	line "Steine mit bloßen"
+	cont "Händen!"
 	done
 
 _FightingDojoBlackbelt3EndBattleText::
-	text "Yow!"
-	line "Stubbed fingers!"
+	text ""
+	line "Autsch! Ich habe"
+	cont "eine Prellung!"
 	prompt
 
 _FightingDojoBlackbelt3AfterBattleText::
-	text "The only thing"
-	line "that frightens us"
-	cont "is psychic power!"
+	text "Die einzige"
+	line "Sache, vor der"
+	cont "wir uns fürchten,"
+	cont "ist PSYCHOKINESE!"
 	done
 
 _FightingDojoBlackbelt4BattleText::
-	text "Hoohah!"
+	text "Haii-ia!"
 
-	para "You're trespassing"
-	line "in our FIGHTING"
-	cont "DOJO!"
+	para "Unbefugten ist"
+	line "der Zutritt zu"
+	cont "unserem KAMPF-"
+	cont "DOJO verboten!"
 	done
 
 _FightingDojoBlackbelt4EndBattleText::
-	text "Oof!"
-	line "I give up!"
+	text "Uff!"
+	line "Ich gebe auf!"
 	prompt
 
 _FightingDojoBlackbelt4AfterBattleText::
-	text "The prime fighters"
-	line "across the land"
-	cont "train here."
+	text "Die allerbesten"
+	line "Kämpfer des"
+	cont "Landes trainieren"
+	cont "hier!"
 	done
 
 _FightingDojoHitmonleePokeBallText::
-	text "You want the"
-	line "hard kicking"
-	cont "HITMONLEE?"
+	text "Möchtest Du"
+	line "KICKLEE, "
+	cont "das trittstarke"
+	cont "#MON?"
 	done
 
 _FightingDojoHitmonchanPokeBallText::
-	text "You want the"
-	line "piston punching"
-	cont "HITMONCHAN?"
+	text "Möchtest Du"
+	line "NOCKCHAN,"
+	cont "den Meister des"
+	cont "Boxkampfs?"
 	done
 
 _FightingDojoBetterNotGetGreedyText::
-	text "Better not get"
-	line "greedy..."
+	text "Er sagte EIN"
+	line "#MON..."
 	done

@@ -1,157 +1,175 @@
 _Route9CooltrainerF1BattleText::
-	text "You have #MON"
-	line "with you!"
-	cont "You're mine!"
+	text "Du trägst #MON"
+	line "bei Dir! Laß uns"
+	cont "kämpfen!"
 	done
 
 _Route9CooltrainerF1EndBattleText::
-	text "You"
-	line "deceived me!"
+	text "Du"
+	line "hast gewonnen!"
 	prompt
 
 _Route9CooltrainerF1AfterBattleText::
-	text "You need light to"
-	line "get through that"
-	cont "dark tunnel ahead."
+	text "Du benötigst eine"
+	line "Lichtquelle, um"
+	cont "den Tunnel zu"
+	cont "durchqueren!"
 	done
 
 _Route9CooltrainerM1BattleText::
-	text "Who's that walking"
-	line "with those good"
-	cont "looking #MON?"
+	text "Hey, wer bist Du?"
+	line "Deine #MON"
+	cont "sehen fit aus!"
 	done
 
 _Route9CooltrainerM1EndBattleText::
-	text "Out"
-	line "like a light!"
+	text ""
+	line "Schnell und"
+	cont "präzise besiegt!"
 	prompt
 
 _Route9CooltrainerM1AfterBattleText::
-	text "Keep walking!"
+	text "OK, geh einfach"
+	line "weiter!"
 	done
 
 _Route9CooltrainerM2BattleText::
-	text "I'm taking ROCK"
-	line "TUNNEL to go to"
-	cont "LAVENDER..."
+	text "Ich gehe durch"
+	line "den FELSTUNNEL"
+	cont "nach LAVANDIA..."
 	done
 
 _Route9CooltrainerM2EndBattleText::
-	text "Can't"
-	line "measure up!"
+	text ""
+	line "Mit Dir habe ich"
+	cont "mich übernommen!"
 	prompt
 
 _Route9CooltrainerM2AfterBattleText::
-	text "Are you off to"
-	line "ROCK TUNNEL too?"
+	text "Möchtest Du auch"
+	line "den FELSTUNNEL"
+	cont "benutzen?"
 	done
 
 _Route9CooltrainerF2BattleText::
-	text "Don't you dare"
-	line "condescend me!"
+	text "Trau Dich ruhig,"
+	line "mit mir zu"
+	cont "kämpfen!"
 	done
 
 _Route9CooltrainerF2EndBattleText::
-	text "No!"
-	line "You're too much!"
+	text "Das"
+	line "war zuviel des"
+	cont "Guten!"
 	prompt
 
 _Route9CooltrainerF2AfterBattleText::
-	text "You're obviously"
-	line "talented! Good"
-	cont "luck to you!"
+	text "Du hast sehr viel"
+	line "Talent! Viel"
+	cont "Glück auf Deinem"
+	cont "weiteren Weg!"
 	done
 
 _Route9Hiker1BattleText::
-	text "Bwahaha!"
-	line "Great! I was"
-	cont "bored, eh!"
+	text "Endlich"
+	line "kommt jemand!"
+	cont "Mir war richtig"
+	cont "langweilig!"
 	done
 
 _Route9Hiker1EndBattleText::
-	text "Keep it"
-	line "coming, eh!"
+	text "War das"
+	line "etwa schon alles?"
 
-	para "Oh wait. I'm out"
-	line "of #MON!"
+	para "Oh! Ich habe kein"
+	line "einsatzbereites"
+	cont "#MON übrig!"
 	prompt
 
 _Route9Hiker1AfterBattleText::
-	text "You sure had guts"
-	line "standing up to me"
-	cont "there, eh?"
+	text "Deine Knie haben"
+	line "ganz schön"
+	cont "geschlackert,"
+	cont "oder?"
 	done
 
 _Route9Hiker2BattleText::
-	text "Hahaha!"
-	line "Aren't you a"
-	cont "little toughie!"
+	text "Du hast"
+	line "keine Chance, Du"
+	cont "kleiner Rabauke!"
 	done
 
 _Route9Hiker2EndBattleText::
-	text "What's"
-	line "that?"
+	text "Was ist"
+	line "passiert?"
 	prompt
 
 _Route9Hiker2AfterBattleText::
-	text "Hahaha! Kids"
-	line "should be tough!"
+	text "Haha! Kinder"
+	line "sollten kleine"
+	cont "Rabauken sein!"
 	done
 
 _Route9Youngster1BattleText::
-	text "I got up early"
-	line "every day to"
-	cont "raise my #MON"
-	cont "from cocoons!"
+	text "Ich stehe jeden"
+	line "Tag früh auf, um"
+	cont "meine #MON"
+	cont "in ihrem Kokon zu"
+	cont "pflegen!"
 	done
 
 _Route9Youngster1EndBattleText::
-	text "WHAT?"
+	text "WAS?"
 
-	para "What a total"
-	line "waste of time!"
+	para "Das war"
+	line "die reinste Zeit-"
+	cont "verschwendung!"
 	prompt
 
 _Route9Youngster1AfterBattleText::
-	text "I have to collect"
-	line "more than bugs to"
-	cont "get stronger..."
+	text "Ich sollte lieber"
+	line "ein paar Stärkere"
+	cont "sammeln..."
 	done
 
 _Route9Hiker3BattleText::
-	text "Hahahaha!"
-	line "Come on, dude!"
+	text "Ha! Wie"
+	line "wäre es mit einem"
+	cont "Kampf?"
 	done
 
 _Route9Hiker3EndBattleText::
-	text "Hahahaha!"
-	line "You beat me fair!"
+	text "Haha!"
+	line "Ein fairer Kampf!"
 	prompt
 
 _Route9Hiker3AfterBattleText::
-	text "Hahahaha!"
-	line "Us hearty guys"
-	cont "always laugh!"
+	text "Haha!"
+	line "Wir Scherzbolde"
+	cont "lachen ständig!"
 	done
 
 _Route9Youngster2BattleText::
-	text "Go, my super bug"
-	line "#MON!"
+	text "Du hast keine"
+	line "Chance gegen"
+	cont "meine KÄFER-"
+	cont "#MON!"
 	done
 
 _Route9Youngster2EndBattleText::
-	text "My"
-	line "bugs..."
+	text ""
+	line "Meine"
+	cont "KÄFER-#MON..."
 	prompt
 
 _Route9Youngster2AfterBattleText::
-	text "If you don't like"
-	line "bug #MON, you"
-	cont "bug me!"
+	text "Wer keine Käfer"
+	line "mag, den mag ich"
+	cont "auch nicht!"
 	done
 
 _Route9SignText::
 	text "ROUTE 9"
-	line "CERULEAN CITY-"
-	cont "ROCK TUNNEL"
+	line "AZURIA CITY -"
+	cont "FELSTUNNEL"
 	done

@@ -1,34 +1,37 @@
 _DaycareGentlemanAllRightThenText::
-	text "All right then,"
+	text "Also,"
 	line "@"
 	text_end
 
 _DaycareGentlemanComeAgainText::
-	text "come again."
+	text "Dann bis später."
 	done
 
 _DaycareGentlemanNoRoomForMonText::
-	text "You have no room"
-	line "for this #MON!"
+	text "Du kannst kein"
+	line "weiteres #MON"
+	cont "mehr tragen!"
 	done
 
 _DaycareGentlemanOnlyHaveOneMonText::
-	text "You only have one"
-	line "#MON with you."
+	text "Du hast nur ein"
+	line "#MON dabei!"
 	done
 
 _DaycareGentlemanCantAcceptMonWithHMText::
-	text "I can't accept a"
-	line "#MON that"
-	cont "knows an HM move."
+	text "Ein #MON, das"
+	line "eine VM-Technik"
+	cont "beherrscht, kann"
+	cont "nicht bei mir"
+	cont "bleiben!"
 	done
 
 _DaycareGentlemanHeresYourMonText::
-	text "Thank you! Here's"
-	line "your #MON!"
+	text "Vielen Dank! Hier"
+	line "ist Dein #MON!"
 	prompt
 
 _DaycareGentlemanNotEnoughMoneyText::
-	text "Hey, you don't"
-	line "have enough ¥!"
+	text "Oh, Du hast"
+	line "nicht genug Geld!"
 	done

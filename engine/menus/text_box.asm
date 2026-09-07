@@ -377,7 +377,11 @@ TwoOptionMenu_RestoreScreenTiles:
 	call UpdateSprites
 	ret
 
+LocalizedTwoOptionMenuStringsStart:
 INCLUDE "data/{LANGUAGE}/yes_no_menu_strings.asm"
+LocalizedTwoOptionMenuStringsEnd:
+	assert LocalizedTwoOptionMenuStringsEnd - LocalizedTwoOptionMenuStringsStart <= $80
+	ds $80 - (LocalizedTwoOptionMenuStringsEnd - LocalizedTwoOptionMenuStringsStart)
 
 DisplayFieldMoveMonMenu:
 	xor a
@@ -499,7 +503,11 @@ DisplayFieldMoveMonMenu:
 	ld de, PokemonMenuEntries
 	jp PlaceString
 
+LocalizedFieldMoveNamesStart:
 INCLUDE "data/moves/{LANGUAGE}/field_move_names.asm"
+LocalizedFieldMoveNamesEnd:
+	assert LocalizedFieldMoveNamesEnd - LocalizedFieldMoveNamesStart <= $50
+	ds $50 - (LocalizedFieldMoveNamesEnd - LocalizedFieldMoveNamesStart)
 
 PokemonMenuEntries:
 	db   "STATS"
