@@ -97,7 +97,30 @@ DisplayNamingScreen:
 	ld b, 9
 	ld c, 18
 	call TextBoxBorder
-	call PrintNamingText
+
+	ld a, [wLanguage]
+	cp LANG_ENGLISH
+	jr z, .En
+	cp LANG_GERMAN
+	jr z, .De
+	cp LANG_SPANISH
+	jr z, .Sp
+	cp LANG_FRENCH
+	jr z, .Fr
+	call PrintNamingTextIT
+	jr .ContinueDrawingNamingScreen
+.En
+	call PrintNamingTextEN
+	jr .ContinueDrawingNamingScreen
+.De
+	call PrintNamingTextDE
+	jr .ContinueDrawingNamingScreen
+.Sp
+	call PrintNamingTextSP
+	jr .ContinueDrawingNamingScreen
+.Fr
+	call PrintNamingTextFR
+.ContinueDrawingNamingScreen
 	ld a, 4
 	ld [wTopMenuItemY], a
 	ld a, 1
@@ -532,13 +555,14 @@ CalcStringLength:
 	inc c
 	jr .loop
 
-PrintNamingText:
+PrintNamingTextIT:
+PrintNamingTextEN:
 	hlcoord 0, 1
 	ld a, [wNamingScreenType]
-	ld de, YourTextString
+	ld de, YourTextStringEN
 	and a
 	jr z, .notNickname
-	ld de, RivalsTextString
+	ld de, RivalsTextStringEN
 	dec a
 	jr z, .notNickname
 	ld a, [wCurPartySpecies]
@@ -554,24 +578,119 @@ PrintNamingText:
 	add hl, bc
 	ld [hl], 'の' ; leftover from Japanese version; blank tile $c9 in English
 	hlcoord 1, 3
-	ld de, NicknameTextString
+	ld de, NicknameTextStringEN
 	jr .placeString
 .notNickname
 	call PlaceString
 	ld l, c
 	ld h, b
-	ld de, NameTextString
+	ld de, NameTextStringEN
 .placeString
 	jp PlaceString
 
-YourTextString:
+PrintNamingTextDE:
+	hlcoord 0, 1
+	ld a, [wNamingScreenType]
+	ld de, YourTextStringDE
+	and a
+	jr z, .notNickname
+	ld de, RivalsTextStringDE
+	dec a
+	jr z, .notNickname
+	ld a, [wCurPartySpecies]
+	ld [wMonPartySpriteSpecies], a
+	push af
+	farcall WriteMonPartySpriteOAMBySpecies
+	pop af
+	ld [wNamedObjectIndex], a
+	call GetMonName
+	hlcoord 4, 1
+	call PlaceString
+	hlcoord 1, 3
+	ld de, NicknameTextStringDE
+	jr .placeString
+.notNickname
+	call PlaceString
+	ld l, c
+	ld h, b
+	ld de, NameTextStringDE
+.placeString
+	jp PlaceString
+
+PrintNamingTextSP:
+	hlcoord 0, 1
+	ld a, [wNamingScreenType]
+	ld de, YourTextStringSP
+	and a
+	jr z, .placeString
+	ld de, RivalsTextStringSP
+	dec a
+	jr z, .placeString
+	ld a, [wCurPartySpecies]
+	ld [wMonPartySpriteSpecies], a
+	push af
+	farcall WriteMonPartySpriteOAMBySpecies
+	pop af
+	ld [wNamedObjectIndex], a
+	call GetMonName
+	hlcoord 4, 1
+	call PlaceString
+	hlcoord 1, 3
+	ld de, NicknameTextStringSP
+.placeString
+	jp PlaceString
+
+PrintNamingTextFR:
+	hlcoord 0, 1
+	ld a, [wNamingScreenType]
+	ld de, YourTextStringFR
+	and a
+	jr z, .placeString
+	ld de, RivalsTextStringFR
+	dec a
+	jr z, .placeString
+	ld a, [wCurPartySpecies]
+	ld [wMonPartySpriteSpecies], a
+	push af
+	farcall WriteMonPartySpriteOAMBySpecies
+	pop af
+	ld [wNamedObjectIndex], a
+	call GetMonName
+	hlcoord 4, 1
+	call PlaceString
+	hlcoord 1, 3
+	ld de, NicknameTextStringFR
+.placeString
+	jp PlaceString
+
+YourTextStringEN:
 	db "YOUR @"
-
-RivalsTextString:
+RivalsTextStringEN:
 	db "RIVAL's @"
-
-NameTextString:
+NameTextStringEN:
 	db "NAME?@"
-
-NicknameTextString:
+NicknameTextStringEN:
 	db "NICKNAME?@"
+
+YourTextStringDE:
+	db "DEIN @"
+RivalsTextStringDE:
+	db "GEGNER-@"
+NameTextStringDE:
+	db "NAME?@"
+NicknameTextStringDE:
+	db "ALIAS?@"
+
+YourTextStringSP:
+	db "¿TU NOMBRE?@"
+RivalsTextStringSP:
+	db "¿NOMBRE RIVAL?@"
+NicknameTextStringSP:
+	db "¿APODO?@"
+
+YourTextStringFR:
+	db "VOTRE NOM?@"
+RivalsTextStringFR:
+	db "NOM DU RIVAL?@"
+NicknameTextStringFR:
+	db "SURNOM?@"

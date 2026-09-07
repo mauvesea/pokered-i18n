@@ -407,7 +407,7 @@ PrintGameVersionOnTitleScreen:
 	cp LANG_FRENCH
 	jr z, .Fr
 ; It
-	hlcoord 7, 8 ; Verify once It gfx is available
+	hlcoord 6, 8
 	ld de, VersionOnTitleScreenTextIT
 	jr .Continue
 .En
@@ -439,7 +439,6 @@ PrintGameVersionOnTitleScreen:
 	jr .placeTileLoop
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
-VersionOnTitleScreenTextIT:
 VersionOnTitleScreenTextEN:
 IF DEF(_RED)
 	db $50,$51,$7F,$52,$53,$54,$55,$56,-1 ; "Red Version"
@@ -470,6 +469,14 @@ IF DEF(_RED)
 ENDC
 IF DEF(_BLUE)
 	db $68,$69,$6a,$6b,$6c,$6d,$58,$6e,$5a,$5b,-1 ; "Blue Version"
+ENDC
+
+VersionOnTitleScreenTextIT:
+IF DEF(_RED)
+	db $70,$71,$72,$73,$74,$75,$76,$77,$78,$79,-1 ; "Version Rouge"
+ENDC
+IF DEF(_BLUE)
+	db $7f,$6f,$70,$71,$72,$73,$74,$75,$76,$77,-1 ; "Blue Version"
 ENDC
 
 DebugNewGamePlayerName:

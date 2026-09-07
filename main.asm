@@ -11,9 +11,7 @@ INCLUDE "data/sprites/facings.asm"
 INCLUDE "engine/events/black_out.asm"
 INCLUDE "data/pokemon/mew.asm"
 INCLUDE "engine/battle/safari_zone.asm"
-INCLUDE "engine/movie/title.asm"
 INCLUDE "engine/pokemon/load_mon_data.asm"
-INCLUDE "data/items/prices.asm"
 LocalizedItemNamesStart:
 INCLUDE "data/items/{LANGUAGE}/names.asm"
 LocalizedItemNamesEnd:
@@ -413,3 +411,11 @@ INCLUDE "data/battle_anims/frame_blocks.asm"
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
+
+
+SECTION "Item Prices Bank", ROMX
+INCLUDE "data/items/prices.asm"
+
+
+SECTION "Title Bank", ROMX
+INCLUDE "engine/movie/title.asm"

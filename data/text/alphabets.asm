@@ -2,8 +2,8 @@ LowerCaseAlphabet:
 	db "abcdefghi"
 	db "jklmnopqr"
 	db "stuvwxyz "
-	db "012345678"
-	db "9´`^¨~ .<ED>"
+	db "123456789"
+	db "0´`^¨~ .<ED>"
 LowerCaseAlphabetKeysEnd:
 	db "symbols   @"
 LowerCaseAlphabetEnd:
@@ -12,8 +12,8 @@ UpperCaseAlphabet:
 	db "ABCDEFGHI"
 	db "JKLMNOPQR"
 	db "STUVWXYZ "
-	db "012345678"
-	db "9´`^¨~ .<ED>"
+	db "123456789"
+	db "0´`^¨~ .<ED>"
 UpperCaseAlphabetKeysEnd:
 	db "lower case@"
 UpperCaseAlphabetEnd:
